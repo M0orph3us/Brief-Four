@@ -1,10 +1,10 @@
 <?php
-require './elements/header.php';
+require './includes/header.php';
 ?>
 
 <main>
 </main>
 
 <?php
-require './elements/footer.php';
+require './includes/footer.php';
 ?>

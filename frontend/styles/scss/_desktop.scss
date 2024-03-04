@@ -2,6 +2,34 @@
   font-size: 18px;
 }
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
+header {
+  .navbar-container-mobile {
+    display: none;
+  }
+
+  .navbar-container-desktop {
+    padding: 1rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .links-container {
+      display: flex;
+      width: max-content;
+      gap: 2rem;
+      background-color: lightblue;
+
+      li {
+        a {
+          color: black;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
 
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 

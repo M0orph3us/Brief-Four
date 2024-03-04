@@ -68,24 +68,99 @@ body {
 }
 
 /*/////////////////////////////////// IMPORT /////////////////////////////////////////////*/
-/*/////////////////////////////// RESPONSIVE MOBIL ///////////////////////////////////////*/
+/*/////////////////////////////// RESPONSIVE MOBIL 320px ///////////////////////////////////////*/
 :root {
   font-size: 16px;
 }
 
+/*//////////////////////////////////// FONT-FAMILY ///////////////////////////////////////*/
 /*//////////////////////////////////// BODY //////////////////////////////////////////////*/
+body {
+  z-index: 1;
+}
+
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
+header .navbar-container-desktop {
+  display: none;
+}
+header .navbar-container-mobile {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.368627451);
+}
+header .navbar-container-mobile .logo-container-mobile {
+  margin-left: 10px;
+}
+header .navbar-container-mobile .open-burger,
+header .navbar-container-mobile .close-burger {
+  margin-right: 10px;
+}
+header .navbar-container-mobile .close-burger {
+  display: none;
+}
+header .navbar-container-mobile .burger-container {
+  z-index: 2;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  background-color: rgb(45, 247, 237);
+}
+header .navbar-container-mobile .burger-container .links-container-burger {
+  width: 100%;
+  padding-top: 160px;
+  display: flex;
+  gap: 120px;
+  flex-direction: column;
+  align-items: center;
+}
+header .navbar-container-mobile .burger-container .links-container-burger li a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
 }
-main .test {
-  color: red;
-  font-size: 10rem;
-}
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
-/*/////////////////////////////// RESPONSIVE TABLET //////////////////////////////////////*/
-/*/////////////////////////////// RESPONSIVE DESKTOP /////////////////////////////////////*/
+/*/////////////////////////////// RESPONSIVE TABLET 768px //////////////////////////////////////*/
+/*/////////////////////////////// RESPONSIVE DESKTOP 1024px /////////////////////////////////////*/
+@media (min-width: 1024px) {
+  :root {
+    font-size: 18px;
+  }
+  /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
+  header .navbar-container-mobile {
+    display: none;
+  }
+  header .navbar-container-desktop {
+    padding: 1rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .navbar-container-desktop .links-container {
+    display: flex;
+    width: max-content;
+    gap: 2rem;
+    background-color: lightblue;
+  }
+  header .navbar-container-desktop .links-container li a {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
+  /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
+}
 
 /*# sourceMappingURL=style.css.map */
