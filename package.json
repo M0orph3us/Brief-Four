@@ -1,0 +1,14 @@
+{
+  "name": "brief-four",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  },
+  "scripts": {
+    "watch": "sass --watch ./frontend/styles/scss/style.scss:./frontend/styles/css/style.css"
+  },
+  "author": "Gael, Lucas",
+  "license": "ISC",
+  "description": ""
+}
