@@ -1,6 +1,6 @@
 <?php
 $uri = ($_SERVER['REQUEST_URI']);
-$pattern = ['/frontend/pages/', '.php'];
+$pattern = ['/Frontend/pages/', '.php'];
 $title = ucfirst(str_replace($pattern, "", $uri));
 ?>
 <!DOCTYPE html>
