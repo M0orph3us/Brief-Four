@@ -9,11 +9,16 @@ header {
 
   .navbar-container-desktop {
     padding: 1rem;
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: $primary-color;
+
+    .logo-container-desktop {
+      .logo {
+        width: 60px;
+      }
+    }
 
     .links-container {
       display: flex;
@@ -34,10 +39,13 @@ header {
       gap: 10px;
 
       button {
-        text-transform: uppercase;
-        font-weight: bold;
+        @include template-btn;
       }
     }
+  }
+
+  .modal-login-form {
+    width: 50%;
   }
 }
 

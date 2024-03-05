@@ -18,4 +18,33 @@ export function menuBurger() {
   }
 }
 
-export function userProfil() {}
+export function userContainer() {
+  if (window.screen.width <= 768) {
+    const userLogo = document.querySelector(".profil");
+    const userContainer = document.querySelector("#user-container");
+
+    userLogo.addEventListener("click", () => {
+      if (window.getComputedStyle(userContainer).display === "none") {
+        userContainer.style.display = "flex";
+      } else {
+        userContainer.style.display = "none";
+      }
+    });
+  }
+}
+
+export function loginModal() {
+  const modalLoginForm = document.querySelector("#modal-login-form");
+  const allBtnLogin = document.querySelectorAll(".btn-login");
+  const arrayBtnLogin = [...allBtnLogin];
+  arrayBtnLogin.forEach((btnLogin) => {
+    btnLogin.addEventListener("click", () => {
+      modalLoginForm.style.display = "block";
+    });
+  });
+
+  const closeModal = document.querySelector("#close-modal-login");
+  closeModal.addEventListener("click", () => {
+    modalLoginForm.style.display = "none";
+  });
+}

@@ -3,6 +3,7 @@
 class Users
 {
     // params
+
     // constructor
     public function __construct()
     {

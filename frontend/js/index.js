@@ -1,5 +1,11 @@
 "use strict";
 
 // functions for menu-burger
-import { menuBurger } from "./scripts/navbar-mobile.js";
+import {
+  menuBurger,
+  userContainer,
+  loginModal,
+} from "./scripts/navbar-mobile.js";
 menuBurger();
+userContainer();
+loginModal();

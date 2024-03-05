@@ -1,2 +1,12 @@
 @mixin template-btn() {
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    border-color: black;
+  }
 }

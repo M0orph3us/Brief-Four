@@ -1,6 +1,6 @@
 <?php
 $uri = ($_SERVER['REQUEST_URI']);
-$pattern = ['/Brief-Four/Frontend/pages/', '.php'];
+$pattern = ['/Brief-Four', '/Frontend/pages/', '.php'];
 $title = ucfirst(str_replace($pattern, "", $uri));
 ?>
 <!DOCTYPE html>
@@ -25,9 +25,9 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <a href="./home.php"><img src="../assets/imgs/reseau.png" alt="logo" class="logo"></a>
             </div>
             <i class="fa-solid fa-user fa-xl profil"></i>
-            <div class="profil-container" id="profil-container">
-                <button type="button" class="btn-login-mobile" id="btn-login-mobile">login</button>
-                <button type="button" class="btn-register-mobile" id="btn-register-mobile">register</button>
+            <div class="user-container" id="user-container">
+                <button type="button" class="btn-login" id="btn-login-mobile">login</button>
+                <a href="./inscription.php"><button type="button" class="btn-register-mobile" id="btn-register-mobile">register</button></a>
             </div>
             <div class="burger-container" id="burger-container">
                 <ul class="links-container-burger" id="links-container-burger">
@@ -39,7 +39,7 @@ $title = ucfirst(str_replace($pattern, "", $uri));
         </div>
         <div class="navbar-container-desktop" id="navbar-container-desktop">
             <div class="logo-container-desktop" id="logo-container-desktop">
-                <a href=""><img src="" alt="logo"></a>
+                <a href="./home.php"><img src="../assets/imgs/reseau.png" alt="logo" class="logo"></a>
             </div>
             <ul class="links-container" id="links-container">
                 <li><a href="./test.php">lorem</a></li>
@@ -47,8 +47,20 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <li><a href="./test.php">lorem</a></li>
             </ul>
             <div class="connections-container" id="connection-container">
-                <button type="button" class="btn-login-desktop" id="btn-login-desktop">login</button>
-                <button type="button" class="btn-register-desktop" id="btn-register-desktop">register</button>
+                <button type="button" class="btn-login" id="btn-login-desktop">login</button>
+                <a href="./inscription.php"><button type="button" class="btn-register-desktop" id="btn-register-desktop">register</button></a>
             </div>
+        </div>
+        <div class="modal-login-form" id="modal-login-form">
+            <form action="../../Backend/controller/signIn.php" method="POST">
+                <i class="fa-solid fa-xmark fa-xl close-modal-login" id="close-modal-login"></i>
+                <label for="email-login">mail</label>
+                <input id="email-login" type="email" name="email" required>
+                <label for="password-login">password</label>
+                <input id="password-login" type="password" name="password" required>
+                <i class="fa-solid fa-eye-slash  hidden-eye-login" class="hidden-eye-login"></i>
+                <i class="fa-solid fa-eye  show-password-login" class="show-password-login"></i>
+                <button id="btn-login" type="submit">login</button>
+            </form>
         </div>
     </header>
