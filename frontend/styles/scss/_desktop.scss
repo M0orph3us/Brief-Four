@@ -13,19 +13,29 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: $primary-color;
 
     .links-container {
       display: flex;
       width: max-content;
       gap: 2rem;
-      background-color: lightblue;
 
       li {
         a {
-          color: black;
+          color: $text-color;
           text-transform: uppercase;
           font-weight: bold;
         }
+      }
+    }
+
+    .connections-container {
+      display: flex;
+      gap: 10px;
+
+      button {
+        text-transform: uppercase;
+        font-weight: bold;
       }
     }
   }
