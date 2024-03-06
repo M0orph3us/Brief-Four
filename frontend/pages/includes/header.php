@@ -1,7 +1,9 @@
 <?php
 session_start();
+
+
 $uri = ($_SERVER['REQUEST_URI']);
-$pattern = ['/Brief-Four', '/Frontend/pages/', '.php'];
+$pattern = ['/Brief-Four', '/frontend/pages/', '.php'];
 $title = ucfirst(str_replace($pattern, "", $uri));
 ?>
 <!DOCTYPE html>
@@ -28,8 +30,7 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             <i class="fa-solid fa-user fa-xl profil"></i>
             <div class="user-container" id="user-container">
                 <button type="button" class="btn-login" id="btn-login-mobile">login</button>
-                <a href="./inscription.php"><button type="button" class="btn-register-mobile"
-                        id="btn-register-mobile">register</button></a>
+                <a href="./inscription.php"><button type="button" class="btn-register-mobile" id="btn-register-mobile">register</button></a>
             </div>
             <div class="burger-container" id="burger-container">
                 <ul class="links-container-burger" id="links-container-burger">
@@ -50,8 +51,8 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             </ul>
             <div class="connections-container" id="connection-container">
                 <button type="button" class="btn-login" id="btn-login-desktop">login</button>
-                <a href="./inscription.php"><button type="button" class="btn-register-desktop"
-                        id="btn-register-desktop">register</button></a>
+                <a href="./inscription.php"><button type="button" class="btn-register-desktop" id="btn-register-desktop">register</button>
+                </a>
             </div>
         </div>
         <div class="modal-login-form" id="modal-login-form">
@@ -60,30 +61,28 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <button id="btn-volunteer" type="button">volunteer</button>
                 <button id="btn-admin" type="button">admin</button>
             </div>
-            <form class="login-admin-form" id="login-admin-form" action="../../Backend/controller/signIn.php"
-                method="POST" onsubmit="return ">
+            <form class="login-admin-form" id="login-admin-form" action="../../Backend/controller/signInAdmin.php" method="POST" onsubmit="return ">
                 <label for="username-login">username</label>
                 <input id="username-login" type="text" name="username" required>
 
                 <label for="password-login">password</label>
                 <div class="password-login-container">
-                    <input id="password-login" type="password" name="password-admin" required>
+                    <input id="password-login" type="password" name="password" required>
                     <i class="fa-solid fa-eye-slash hidden-eye-login"></i>
                     <i class="fa-solid fa-eye show-eye-login"></i>
                 </div>
 
-                <input type="hidden" name="csrf-admin">
+                <input type="hidden" name="csrf-token">
                 <button id="btn-login-admin" stype="submit">login</button>
             </form>
-            <form class="login-user-form" id="login-user-form" action="../../Backend/controller/signIn.php"
-                method="post" onsubmit="return">
+            <form class="login-user-form" id="login-user-form" action="../../Backend/controller/signInVolunteer.php" method="post" onsubmit="return">
                 <label for="password-user">code</label>
                 <div class="code-login-container">
-                    <input type="password" id="password-user">
+                    <input type="password" id="password-user" name="code">
                     <i class="fa-solid fa-eye-slash hidden-eye-login"></i>
                     <i class="fa-solid fa-eye show-eye-login"></i>
                 </div>
-                <input type="hidden" name="csrf-user">
+                <input type="hidden" name="csrf-token">
                 <button id="btn-login-user" stype="submit">login</button>
             </form>
         </div>
