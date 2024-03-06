@@ -207,12 +207,13 @@ header {
       gap: 5px;
 
       .code-login-container {
+        position: relative;
         display: flex;
         align-items: center;
         .show-eye-login,
         .hidden-eye-login {
           position: absolute;
-          right: 10px;
+          right: -30px;
         }
 
         .show-eye-login {
@@ -273,6 +274,13 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
+  .error404 {
+    background-image: url("../../assets/imgs/404.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100%;
+  }
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/

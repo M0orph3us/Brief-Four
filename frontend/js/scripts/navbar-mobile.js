@@ -68,10 +68,12 @@ export function loginModal() {
   const eyeOpen = document.querySelectorAll(".show-eye-login");
   const arrayEyeOpen = [...eyeOpen];
   const passwordLogin = document.querySelector("#password-login");
+  const codeLogin = document.querySelector("#password-user");
   arrayEyeClose.forEach((eyeClose) => {
     eyeClose.addEventListener("click", () => {
       eyeClose.style.display = "none";
       passwordLogin.type = "text";
+      codeLogin.type = "text";
       arrayEyeOpen.forEach((eyeOpen) => {
         eyeOpen.style.display = "block";
       });
@@ -82,6 +84,7 @@ export function loginModal() {
     eyeOpen.addEventListener("click", () => {
       eyeOpen.style.display = "none";
       passwordLogin.type = "password";
+      codeLogin.type = "password";
       arrayEyeClose.forEach((eyeClose) => {
         eyeClose.style.display = "block";
       });
