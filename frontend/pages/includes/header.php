@@ -27,7 +27,8 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             <i class="fa-solid fa-user fa-xl profil"></i>
             <div class="user-container" id="user-container">
                 <button type="button" class="btn-login" id="btn-login-mobile">login</button>
-                <a href="./inscription.php"><button type="button" class="btn-register-mobile" id="btn-register-mobile">register</button></a>
+                <a href="./inscription.php"><button type="button" class="btn-register-mobile"
+                        id="btn-register-mobile">register</button></a>
             </div>
             <div class="burger-container" id="burger-container">
                 <ul class="links-container-burger" id="links-container-burger">
@@ -48,7 +49,8 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             </ul>
             <div class="connections-container" id="connection-container">
                 <button type="button" class="btn-login" id="btn-login-desktop">login</button>
-                <a href="./inscription.php"><button type="button" class="btn-register-desktop" id="btn-register-desktop">register</button></a>
+                <a href="./inscription.php"><button type="button" class="btn-register-desktop"
+                        id="btn-register-desktop">register</button></a>
             </div>
         </div>
         <div class="modal-login-form" id="modal-login-form">
@@ -56,11 +58,13 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <i class="fa-solid fa-xmark fa-xl close-modal-login" id="close-modal-login"></i>
                 <label for="email-login">mail</label>
                 <input id="email-login" type="email" name="email" required>
-                <label for="password-login">password</label>
-                <input id="password-login" type="password" name="password" required>
-                <i class="fa-solid fa-eye-slash  hidden-eye-login" class="hidden-eye-login"></i>
-                <i class="fa-solid fa-eye  show-password-login" class="show-password-login"></i>
-                <button id="btn-login" type="submit">login</button>
+                <div class="password-login-container"><label for="password-login">password</label>
+                    <input id="password-login" type="password" name="password" required>
+                    <i class="fa-solid fa-eye-slash  hidden-eye-login" id="hidden-eye-login"></i>
+                    <i class="fa-solid fa-eye  show-password-login" id="show-password-login"></i>
+                </div>
+                <input type="hidden" name="csrf" value=<?= $csrfGet ?>>
+                <button id="btn-login" stype="submit">login</button>
             </form>
         </div>
     </header>

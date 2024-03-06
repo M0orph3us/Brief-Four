@@ -47,4 +47,20 @@ export function loginModal() {
   closeModal.addEventListener("click", () => {
     modalLoginForm.style.display = "none";
   });
+
+  const eyeClose = document.querySelector("#hidden-eye-login");
+  const eyeOpen = document.querySelector("#show-password-login");
+  const passwordLogin = document.querySelector("#password-login");
+
+  eyeClose.addEventListener("click", () => {
+    eyeOpen.style.display = "block";
+    eyeClose.style.display = "none";
+    passwordLogin.type = "text";
+  });
+
+  eyeOpen.addEventListener("click", () => {
+    eyeOpen.style.display = "none";
+    eyeClose.style.display = "block";
+    passwordLogin.type = "password";
+  });
 }
