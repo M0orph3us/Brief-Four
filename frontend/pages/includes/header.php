@@ -1,4 +1,5 @@
 <?php
+session_start();
 $uri = ($_SERVER['REQUEST_URI']);
 $pattern = ['/Brief-Four', '/Frontend/pages/', '.php'];
 $title = ucfirst(str_replace($pattern, "", $uri));
@@ -54,16 +55,19 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             </div>
         </div>
         <div class="modal-login-form" id="modal-login-form">
-            <form action="../../Backend/controller/signIn.php" method="POST">
+            <form action="../../Backend/controller/signIn.php" method="POST" onsubmit="return ">
                 <i class="fa-solid fa-xmark fa-xl close-modal-login" id="close-modal-login"></i>
                 <label for="email-login">mail</label>
                 <input id="email-login" type="email" name="email" required>
-                <div class="password-login-container"><label for="password-login">password</label>
-                    <input id="password-login" type="password" name="password" required>
-                    <i class="fa-solid fa-eye-slash  hidden-eye-login" id="hidden-eye-login"></i>
-                    <i class="fa-solid fa-eye  show-password-login" id="show-password-login"></i>
+
+                <label for="password-login">password</label>
+                <div class="password-login-container"><input id="password-login" type="password" name="password"
+                        required>
+                    <i class="fa-solid fa-eye-slash hidden-eye-login" id="hidden-eye-login"></i>
+                    <i class="fa-solid fa-eye show-password-login" id="show-password-login"></i>
                 </div>
-                <input type="hidden" name="csrf" value=<?= $csrfGet ?>>
+
+                <input type="hidden" name="csrf">
                 <button id="btn-login" stype="submit">login</button>
             </form>
         </div>

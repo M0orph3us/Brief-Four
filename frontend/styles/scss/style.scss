@@ -116,9 +116,18 @@ header {
       }
     }
 
-    .open-burger,
-    .close-burger {
-      width: 24px;
+    // .open-burger,
+    // .close-burger {
+    //   width: 32px;
+    //   &::before {
+    //     width: 32px;
+    //   }
+    // }
+
+    .open-burger::before {
+      border-radius: 5px;
+      border: 1px solid black;
+      padding: 5px;
     }
 
     .close-burger {
@@ -170,7 +179,8 @@ header {
     }
   }
   .modal-login-form {
-    display: none;
+    display: flex;
+    justify-content: center;
     z-index: 3;
     position: absolute;
     top: 30%;
@@ -185,6 +195,19 @@ header {
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 5px;
+
+      .password-login-container {
+        display: flex;
+        align-items: center;
+        .show-password-login {
+          display: none;
+        }
+        .show-password-login,
+        .hidden-password-login {
+          position: absolute;
+        }
+      }
 
       .close-modal-login {
         position: absolute;
