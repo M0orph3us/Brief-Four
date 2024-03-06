@@ -2,6 +2,26 @@
 header {
   .modal-login-form {
     width: 50%;
+    .login-admin-form {
+      .password-login-container {
+        .show-eye-login,
+        .hidden-eye-login {
+          right: -35px;
+        }
+      }
+      .close-modal-login {
+        top: 25px;
+        right: 20px;
+      }
+    }
+    .login-user-form {
+      .code-login-container {
+        .show-eye-login,
+        .hidden-eye-login {
+          right: 60px;
+        }
+      }
+    }
   }
 }
 

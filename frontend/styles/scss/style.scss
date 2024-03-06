@@ -116,14 +116,6 @@ header {
       }
     }
 
-    // .open-burger,
-    // .close-burger {
-    //   width: 32px;
-    //   &::before {
-    //     width: 32px;
-    //   }
-    // }
-
     .open-burger::before {
       border-radius: 5px;
       border: 1px solid black;
@@ -179,7 +171,7 @@ header {
     }
   }
   .modal-login-form {
-    display: flex;
+    display: none;
     justify-content: center;
     z-index: 3;
     position: absolute;
@@ -189,31 +181,74 @@ header {
     border-radius: 25px;
     padding: 1rem 0;
     background-color: $secondary-color;
-    width: 80%;
+    width: 85%;
     animation: TopToBottom 1.5s ease-in-out;
-    form {
+
+    .close-modal-login {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+    }
+    .choose-login-container {
+      padding-bottom: 10px;
       display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      button {
+        @include template-btn;
+      }
+    }
+    .login-user-form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+
+      .code-login-container {
+        display: flex;
+        align-items: center;
+        .show-eye-login,
+        .hidden-eye-login {
+          position: absolute;
+          right: 10px;
+        }
+
+        .show-eye-login {
+          display: none;
+        }
+      }
+
+      label {
+        color: $text-color;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      button {
+        @include template-btn;
+      }
+    }
+    .login-admin-form {
+      display: none;
       flex-direction: column;
       align-items: center;
       gap: 5px;
 
       .password-login-container {
         display: flex;
+        position: relative;
         align-items: center;
-        .show-password-login {
+        .show-eye-login {
           display: none;
         }
-        .show-password-login,
-        .hidden-password-login {
+        .show-eye-login,
+        .hidden-eye-login {
           position: absolute;
+          right: -30px;
         }
       }
 
-      .close-modal-login {
-        position: absolute;
-        top: 20px;
-        right: 15px;
-      }
       label {
         color: $text-color;
         text-transform: uppercase;

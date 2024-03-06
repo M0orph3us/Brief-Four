@@ -160,7 +160,7 @@ header .navbar-container-mobile .burger-container .links-container-burger li a {
   font-weight: bolder;
 }
 header .modal-login-form {
-  display: flex;
+  display: none;
   justify-content: center;
   z-index: 3;
   position: absolute;
@@ -170,37 +170,21 @@ header .modal-login-form {
   border-radius: 25px;
   padding: 1rem 0;
   background-color: #fad557;
-  width: 80%;
+  width: 85%;
   animation: TopToBottom 1.5s ease-in-out;
 }
-header .modal-login-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-header .modal-login-form form .password-login-container {
-  display: flex;
-  align-items: center;
-}
-header .modal-login-form form .password-login-container .show-password-login {
-  display: none;
-}
-header .modal-login-form form .password-login-container .show-password-login,
-header .modal-login-form form .password-login-container .hidden-password-login {
-  position: absolute;
-}
-header .modal-login-form form .close-modal-login {
+header .modal-login-form .close-modal-login {
   position: absolute;
   top: 20px;
   right: 15px;
 }
-header .modal-login-form form label {
-  color: #252525;
-  text-transform: uppercase;
-  font-weight: bold;
+header .modal-login-form .choose-login-container {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-header .modal-login-form form button {
+header .modal-login-form .choose-login-container button {
   text-transform: uppercase;
   border: 2px solid transparent;
   padding: 0.5rem 0.7rem;
@@ -209,7 +193,79 @@ header .modal-login-form form button {
   font-weight: bold;
   cursor: pointer;
 }
-header .modal-login-form form button:hover {
+header .modal-login-form .choose-login-container button:hover {
+  border-color: black;
+}
+header .modal-login-form .login-user-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+header .modal-login-form .login-user-form .code-login-container {
+  display: flex;
+  align-items: center;
+}
+header .modal-login-form .login-user-form .code-login-container .show-eye-login,
+header .modal-login-form .login-user-form .code-login-container .hidden-eye-login {
+  position: absolute;
+  right: 10px;
+}
+header .modal-login-form .login-user-form .code-login-container .show-eye-login {
+  display: none;
+}
+header .modal-login-form .login-user-form label {
+  color: #252525;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+header .modal-login-form .login-user-form button {
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+header .modal-login-form .login-user-form button:hover {
+  border-color: black;
+}
+header .modal-login-form .login-admin-form {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+header .modal-login-form .login-admin-form .password-login-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+header .modal-login-form .login-admin-form .password-login-container .show-eye-login {
+  display: none;
+}
+header .modal-login-form .login-admin-form .password-login-container .show-eye-login,
+header .modal-login-form .login-admin-form .password-login-container .hidden-eye-login {
+  position: absolute;
+  right: -30px;
+}
+header .modal-login-form .login-admin-form label {
+  color: #252525;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+header .modal-login-form .login-admin-form button {
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+header .modal-login-form .login-admin-form button:hover {
   border-color: black;
 }
 @keyframes TopToBottom {
@@ -232,6 +288,18 @@ main {
   /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
   header .modal-login-form {
     width: 50%;
+  }
+  header .modal-login-form .login-admin-form .password-login-container .show-eye-login,
+  header .modal-login-form .login-admin-form .password-login-container .hidden-eye-login {
+    right: -35px;
+  }
+  header .modal-login-form .login-admin-form .close-modal-login {
+    top: 25px;
+    right: 20px;
+  }
+  header .modal-login-form .login-user-form .code-login-container .show-eye-login,
+  header .modal-login-form .login-user-form .code-login-container .hidden-eye-login {
+    right: 60px;
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
@@ -282,7 +350,7 @@ main {
     border-color: black;
   }
   header .modal-login-form {
-    width: 50%;
+    width: 40%;
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/

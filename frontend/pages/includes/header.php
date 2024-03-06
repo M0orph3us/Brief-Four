@@ -55,20 +55,36 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             </div>
         </div>
         <div class="modal-login-form" id="modal-login-form">
-            <form action="../../Backend/controller/signIn.php" method="POST" onsubmit="return ">
-                <i class="fa-solid fa-xmark fa-xl close-modal-login" id="close-modal-login"></i>
-                <label for="email-login">mail</label>
-                <input id="email-login" type="email" name="email" required>
+            <i class="fa-solid fa-xmark fa-xl close-modal-login" id="close-modal-login"></i>
+            <div class="choose-login-container">
+                <button id="btn-volunteer" type="button">volunteer</button>
+                <button id="btn-admin" type="button">admin</button>
+            </div>
+            <form class="login-admin-form" id="login-admin-form" action="../../Backend/controller/signIn.php"
+                method="POST" onsubmit="return ">
+                <label for="username-login">username</label>
+                <input id="username-login" type="text" name="username" required>
 
                 <label for="password-login">password</label>
-                <div class="password-login-container"><input id="password-login" type="password" name="password"
-                        required>
-                    <i class="fa-solid fa-eye-slash hidden-eye-login" id="hidden-eye-login"></i>
-                    <i class="fa-solid fa-eye show-password-login" id="show-password-login"></i>
+                <div class="password-login-container">
+                    <input id="password-login" type="password" name="password-admin" required>
+                    <i class="fa-solid fa-eye-slash hidden-eye-login"></i>
+                    <i class="fa-solid fa-eye show-eye-login"></i>
                 </div>
 
-                <input type="hidden" name="csrf">
-                <button id="btn-login" stype="submit">login</button>
+                <input type="hidden" name="csrf-admin">
+                <button id="btn-login-admin" stype="submit">login</button>
+            </form>
+            <form class="login-user-form" id="login-user-form" action="../../Backend/controller/signIn.php"
+                method="post" onsubmit="return">
+                <label for="password-user">code</label>
+                <div class="code-login-container">
+                    <input type="password" id="password-user">
+                    <i class="fa-solid fa-eye-slash hidden-eye-login"></i>
+                    <i class="fa-solid fa-eye show-eye-login"></i>
+                </div>
+                <input type="hidden" name="csrf-user">
+                <button id="btn-login-user" stype="submit">login</button>
             </form>
         </div>
     </header>

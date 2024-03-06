@@ -48,19 +48,43 @@ export function loginModal() {
     modalLoginForm.style.display = "none";
   });
 
-  const eyeClose = document.querySelector("#hidden-eye-login");
-  const eyeOpen = document.querySelector("#show-password-login");
-  const passwordLogin = document.querySelector("#password-login");
+  const btnVolunteer = document.querySelector("#btn-volunteer");
+  const btnAdmin = document.querySelector("#btn-admin");
+  const formVolunteer = document.querySelector("#login-user-form");
+  const formAdmin = document.querySelector("#login-admin-form");
 
-  eyeClose.addEventListener("click", () => {
-    eyeOpen.style.display = "block";
-    eyeClose.style.display = "none";
-    passwordLogin.type = "text";
+  btnAdmin.addEventListener("click", () => {
+    formVolunteer.style.display = "none";
+    formAdmin.style.display = "flex";
   });
 
-  eyeOpen.addEventListener("click", () => {
-    eyeOpen.style.display = "none";
-    eyeClose.style.display = "block";
-    passwordLogin.type = "password";
+  btnVolunteer.addEventListener("click", () => {
+    formVolunteer.style.display = "flex";
+    formAdmin.style.display = "none";
+  });
+
+  const eyeClose = document.querySelectorAll(".hidden-eye-login");
+  const arrayEyeClose = [...eyeClose];
+  const eyeOpen = document.querySelectorAll(".show-eye-login");
+  const arrayEyeOpen = [...eyeOpen];
+  const passwordLogin = document.querySelector("#password-login");
+  arrayEyeClose.forEach((eyeClose) => {
+    eyeClose.addEventListener("click", () => {
+      eyeClose.style.display = "none";
+      passwordLogin.type = "text";
+      arrayEyeOpen.forEach((eyeOpen) => {
+        eyeOpen.style.display = "block";
+      });
+    });
+  });
+
+  arrayEyeOpen.forEach((eyeOpen) => {
+    eyeOpen.addEventListener("click", () => {
+      eyeOpen.style.display = "none";
+      passwordLogin.type = "password";
+      arrayEyeClose.forEach((eyeClose) => {
+        eyeClose.style.display = "block";
+      });
+    });
   });
 }

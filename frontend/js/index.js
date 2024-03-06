@@ -9,3 +9,5 @@ import {
 menuBurger();
 userContainer();
 loginModal();
+
+// functions for login constraints
