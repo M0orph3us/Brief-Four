@@ -289,6 +289,42 @@ main .error404 {
   width: 100vw;
   height: 100%;
 }
+main .form-admin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 80%;
+}
+main .form-admin-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+main .form-admin-container form label {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #252525;
+}
+main .form-admin-container form button {
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #445aff;
+}
+main .form-admin-container form button:hover {
+  border-color: black;
+}
+main .form-admin-container form button:hover {
+  color: white;
+}
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 /*/////////////////////////////// RESPONSIVE TABLET 768px //////////////////////////////////////*/
