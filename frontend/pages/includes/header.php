@@ -1,8 +1,7 @@
 <?php
-if (isset($_SESSION)) {
-    $csrfVolunteer = $_SESSION["csrf-volunteer"];
-    $csrfAdmin = $_SESSION['csrf-admin'];
-}
+require '../../backend/controller/csrf.php';
+$csrfAdmin = csrfAdminLogin();
+$csrfVolunteer = csrfVolunteersLogin();
 
 $uri = ($_SERVER['REQUEST_URI']);
 $pattern = ['/Brief-Four', '/frontend/pages/', '.php'];
