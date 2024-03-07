@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== true) {
+if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== true || empty($_SESSION["isConnectedAdmin"])) {
     header("Location: ./home.php");
     exit();
 }
-require '../../backend/controller/csrf.php';
+require '../../backend/csrf-token/csrfRegister.php';
 $csrfAdminForm = csrfAdminForm();
 
 require './includes/header.php';
@@ -37,7 +37,7 @@ require './includes/header.php';
             <input type="text" id="name-event" minlength="3" maxlength="50" required>
 
             <label for="comment-event">comment</label>
-            <textarea name="comment" id="comment-event" cols="30" rows="10" minlength="5" maxlength="100"></textarea>
+            <input type="text" id="comment-event" name="comment">
 
             <input type="hidden" name="csrf-admin-form" value="<?= $csrfAdminForm ?>">
             <button type="submit" onsubmit="return ">send</button>

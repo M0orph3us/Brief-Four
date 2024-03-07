@@ -1,5 +1,5 @@
 <?php
-require '../../backend/controller/csrf.php';
+require '../../backend/csrf-token/csrfLogin.php';
 $csrfAdmin = csrfAdminLogin();
 $csrfVolunteer = csrfVolunteersLogin();
 

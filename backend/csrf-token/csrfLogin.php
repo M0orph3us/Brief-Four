@@ -18,13 +18,3 @@ function csrfAdminLogin()
     }
     return $_SESSION['csrf-admin'];
 }
-
-
-// for form admin
-function csrfAdminForm()
-{
-    if (!isset($_SESSION['csrf-admin-form'])) {
-        $_SESSION['csrf-admin-form'] = bin2hex(random_bytes(32));
-    }
-    return $_SESSION['csrf-admin-form'];
-}
