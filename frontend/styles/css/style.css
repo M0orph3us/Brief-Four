@@ -126,15 +126,18 @@ header .navbar-container-mobile .user-container {
 }
 header .navbar-container-mobile .user-container button {
   text-transform: uppercase;
-  border: 2px solid transparent;
+  background-color: #445aff;
   padding: 0.5rem 0.7rem;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
+  color: white;
   cursor: pointer;
+  transition: 0.5s background-color;
 }
 header .navbar-container-mobile .user-container button:hover {
-  border-color: black;
+  background-color: #474747;
+  transition: 0.5s background-color;
 }
 header .navbar-container-mobile .burger-container {
   z-index: 2;
@@ -186,15 +189,18 @@ header .modal-login-form .choose-login-container {
 }
 header .modal-login-form .choose-login-container button {
   text-transform: uppercase;
-  border: 2px solid transparent;
+  background-color: #445aff;
   padding: 0.5rem 0.7rem;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
+  color: white;
   cursor: pointer;
+  transition: 0.5s background-color;
 }
 header .modal-login-form .choose-login-container button:hover {
-  border-color: black;
+  background-color: #474747;
+  transition: 0.5s background-color;
 }
 header .modal-login-form .login-user-form {
   position: relative;
@@ -223,15 +229,18 @@ header .modal-login-form .login-user-form label {
 }
 header .modal-login-form .login-user-form button {
   text-transform: uppercase;
-  border: 2px solid transparent;
+  background-color: #445aff;
   padding: 0.5rem 0.7rem;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
+  color: white;
   cursor: pointer;
+  transition: 0.5s background-color;
 }
 header .modal-login-form .login-user-form button:hover {
-  border-color: black;
+  background-color: #474747;
+  transition: 0.5s background-color;
 }
 header .modal-login-form .login-admin-form {
   display: none;
@@ -259,15 +268,18 @@ header .modal-login-form .login-admin-form label {
 }
 header .modal-login-form .login-admin-form button {
   text-transform: uppercase;
-  border: 2px solid transparent;
+  background-color: #445aff;
   padding: 0.5rem 0.7rem;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
+  color: white;
   cursor: pointer;
+  transition: 0.5s background-color;
 }
 header .modal-login-form .login-admin-form button:hover {
-  border-color: black;
+  background-color: #474747;
+  transition: 0.5s background-color;
 }
 @keyframes TopToBottom {
   from {
@@ -293,7 +305,7 @@ main .error404 {
   width: 100vw;
   height: 100%;
 }
-main .form-admin-container {
+main .admin-container .form-admin-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,33 +313,32 @@ main .form-admin-container {
   gap: 50px;
   height: 80%;
 }
-main .form-admin-container form {
+main .admin-container .form-admin-container form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-main .form-admin-container form label {
+main .admin-container .form-admin-container form label {
   font-weight: 600;
   text-transform: capitalize;
   color: #252525;
 }
-main .form-admin-container form button {
+main .admin-container .form-admin-container form button {
   text-transform: uppercase;
-  border: 2px solid transparent;
+  background-color: #445aff;
   padding: 0.5rem 0.7rem;
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: bold;
-  cursor: pointer;
-  background-color: #445aff;
-}
-main .form-admin-container form button:hover {
-  border-color: black;
-}
-main .form-admin-container form button:hover {
   color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+}
+main .admin-container .form-admin-container form button:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
@@ -390,15 +401,18 @@ main .form-admin-container form button:hover {
   }
   header .navbar-container-desktop .connections-container button {
     text-transform: uppercase;
-    border: 2px solid transparent;
+    background-color: #445aff;
     padding: 0.5rem 0.7rem;
     border-radius: 5px;
     font-size: 0.9rem;
     font-weight: bold;
+    color: white;
     cursor: pointer;
+    transition: 0.5s background-color;
   }
   header .navbar-container-desktop .connections-container button:hover {
-    border-color: black;
+    background-color: #474747;
+    transition: 0.5s background-color;
   }
   header .modal-login-form {
     width: 40%;

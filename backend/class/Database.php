@@ -36,13 +36,13 @@ class Database
     // mehods
 
 
-    // function for open csv mode only read
+    // function for open csv mode read only
     private function openReadCsv()
     {
         return fopen($this->urlCsv, 'r');
     }
 
-    // function for open csv mode only write
+    // function for open csv mode write only
     private function openWriteCsv()
     {
         return fopen($this->urlCsv, 'ab');
@@ -53,10 +53,10 @@ class Database
     {
         $data = [];
         $csv = $this->openReadCsv();
-        $row = 1;
+
 
         if ($csv !== false) {
-            while (($row = fgetcsv($csv)) !== false) {
+            while (($row = fgetcsv($csv, null)) !== false) {
                 $data[] = $row;
             }
             fclose($this->openReadCsv());
@@ -69,11 +69,11 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('REGION', 'EVENT NAME', 'DATE', 'COMMENNT');
-                fputcsv($this->openWriteCsv(), $entete, ";");
+                $entete = array('REGION', 'EVENT NAME', 'DATE', 'COMMENT');
+                fputcsv($this->openWriteCsv(), $entete);
             }
         }
-        fputcsv($this->openWriteCsv(), $array, ";");
+        fputcsv($this->openWriteCsv(), $array);
         fclose($this->openWriteCsv());
     }
 
@@ -83,10 +83,10 @@ class Database
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
                 $entete = array('FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'PHONE', 'MAIL', 'REGION', 'AVAILABILITY DAY', 'AVAILABILITY HOUR', 'PRIVILIGED POST', 'FREE EXPRESSION');
-                fputcsv($this->openWriteCsv(), $entete, ";");
+                fputcsv($this->openWriteCsv(), $entete);
             }
         }
-        fputcsv($this->openWriteCsv(), $array, ";");
+        fputcsv($this->openWriteCsv(), $array);
         fclose($this->openWriteCsv());
     }
 
@@ -96,10 +96,10 @@ class Database
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
                 $entete = array('EVENT NAME', 'VOLUNTEERS',  'DATE');
-                fputcsv($this->openWriteCsv(), $entete, ";");
+                fputcsv($this->openWriteCsv(), $entete);
             }
         }
-        fputcsv($this->openWriteCsv(), $array, ";");
+        fputcsv($this->openWriteCsv(), $array);
         fclose($this->openWriteCsv());
     }
 }

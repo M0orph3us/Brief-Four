@@ -1,7 +1,7 @@
 <?php
 function autoload($class)
 {
-    $directories = ['../class/', '../repository/'];
+    $directories = ['../class/', '../repository/', '../../backend/class/'];
 
     foreach ($directories as $directory) {
         $file = $directory . $class . '.php';

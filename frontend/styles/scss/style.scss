@@ -287,31 +287,29 @@ main {
     height: 100%;
   }
 
-  .form-admin-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    height: 80%;
-
-    form {
+  .admin-container {
+    .form-admin-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      gap: 10px;
+      align-items: center;
+      gap: 50px;
+      height: 80%;
 
-      label {
-        font-weight: 600;
-        text-transform: capitalize;
-        color: $text-color;
-      }
-      button {
-        @include template-btn;
-        background-color: $primary-color;
-        &:hover {
-          color: white;
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        label {
+          font-weight: 600;
+          text-transform: capitalize;
+          color: $text-color;
+        }
+        button {
+          @include template-btn;
         }
       }
     }
