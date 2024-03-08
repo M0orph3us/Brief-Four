@@ -274,6 +274,11 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .error404 {
     background-image: url("../../assets/imgs/404.jpg");
     background-size: cover;
@@ -282,7 +287,34 @@ main {
     height: 100%;
   }
 
-/* ////////////////////////////////////REGISTER FORM///////////////////////////////////////*/
+
+  .admin-container {
+    .form-admin-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      height: 80%;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        label {
+          font-weight: 600;
+          text-transform: capitalize;
+          color: $text-color;
+        }
+        button {
+          @include template-btn;
+        }
+      }
+    }
+  }
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/

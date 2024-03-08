@@ -4,7 +4,6 @@ require '../../backend/csrf-token/csrfRegister.php';
 require './includes/header.php';
 $csrfRegister = csrfVolunteersForm();
 ?>
-
 <main>
     <h1>Formulaire d'inscription</h1>
     <div class="titleUnderline"></div>
@@ -92,6 +91,5 @@ $csrfRegister = csrfVolunteersForm();
         </form>
     </div>
 </main>
-
 <?php
 require './includes/footer.php';
