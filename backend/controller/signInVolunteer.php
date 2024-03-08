@@ -1,5 +1,5 @@
 <?php
-session_start();
+require '../config/autoload.php';
 
 if (isset($_POST["csrf-volunteer"]) && $_POST["csrf-volunteer"] === $_SESSION["csrf-volunteer"]) {
     if (isset($_POST["code"]) && !empty($_POST["code"])) {

@@ -65,9 +65,9 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <button id="btn-admin" type="button">admin</button>
             </div>
             <form class="login-admin-form" id="login-admin-form" action="../../Backend/controller/signInAdmin.php"
-                method="POST" onsubmit="return ">
+                method="POST">
                 <label for="username-login">username</label>
-                <input id="username-login" type="text" name="username" autocomplete required>
+                <input id="username-login" type="text" name="username" autocomplete="on" required>
 
                 <label for="password-login">password</label>
                 <div class="password-login-container">
@@ -80,7 +80,7 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             </form>
 
             <form class="login-user-form" id="login-user-form" action="../../Backend/controller/signInVolunteer.php"
-                method="post" onsubmit="return">
+                method="post">
                 <label for="password-user">code</label>
                 <div class="code-login-container">
                     <input type="password" id="password-user" name="code">

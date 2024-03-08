@@ -69,7 +69,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('Region', 'EventName', 'Date', 'Comment');
+                $entete = array('REGION', 'EVENT NAME', 'DATE', 'COMMENNT');
                 fputcsv($this->openWriteCsv(), $entete, ";");
             }
         }
@@ -82,7 +82,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('Firstname', 'Lastname', 'age', 'sex', 'phone', 'mail', 'region', 'Availability day', 'Availability hour', 'Privileged post', 'Free expression');
+                $entete = array('FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'PHONE', 'MAIL', 'REGION', 'AVAILABILITY DAY', 'AVAILABILITY HOUR', 'PRIVILIGED POST', 'FREE EXPRESSION');
                 fputcsv($this->openWriteCsv(), $entete, ";");
             }
         }
@@ -95,7 +95,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('Event Name', 'Volunteers',  'Date');
+                $entete = array('EVENT NAME', 'VOLUNTEERS',  'DATE');
                 fputcsv($this->openWriteCsv(), $entete, ";");
             }
         }

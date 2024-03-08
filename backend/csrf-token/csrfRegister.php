@@ -1,5 +1,6 @@
 <?php
-// for form admin
+
+// for form event admin
 function csrfAdminForm()
 {
     if (!isset($_SESSION['csrf-admin-form'])) {
@@ -8,7 +9,7 @@ function csrfAdminForm()
     return $_SESSION['csrf-admin-form'];
 }
 
-// for form volunteers
+// for form register volunteers
 function csrfVolunteersForm()
 {
     if (!isset($_SESSION['csrf-volunteers-form'])) {

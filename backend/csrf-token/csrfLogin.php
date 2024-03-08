@@ -1,6 +1,5 @@
 <?php
 
-
 // for form login volunteers
 function csrfVolunteersLogin()
 {

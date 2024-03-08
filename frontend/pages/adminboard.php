@@ -16,19 +16,19 @@ require './includes/header.php';
         <form action="../../backend/controller/adminForm.php" method="post">
             <label for="region-select">region</label>
             <select name="region" id="region-select" required>
-                <option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+                <option value="Auvergne-Rhone-Alpes">Auvergne-Rhône-Alpes</option>
                 <option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
                 <option value="Bretagne">Bretagne</option>
                 <option value="Centre-Val de Loire">Centre-Val de Loire</option>
                 <option value="Corse">Corse</option>
                 <option value="Grand Est">Grand Est</option>
                 <option value="Hauts-de-France">Hauts-de-France</option>
-                <option value="Île-de-France">Île-de-France</option>
+                <option value="Ile-de-France">Île-de-France</option>
                 <option value="Normandie">Normandie</option>
                 <option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
                 <option value="Occitanie">Occitanie</option>
                 <option value="Pays de la Loire">Pays de la Loire</option>
-                <option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+                <option value="Provence-Alpes-Cote d'Azur">Provence-Alpes-Côte d'Azur</option>
             </select>
 
             <label for="date-event">date event</label>

@@ -1,6 +1,6 @@
 <?php
-session_start();
-require '../class/Database.php';
+require '../config/autoload.php';
+
 if (isset($_POST['csrf-admin-form']) && $_POST['csrf-admin-form'] === $_SESSION['csrf-admin-form']) {
 
     if (isset($_POST["region"], $_POST["date"], $_POST["name-event"]) && !empty($_POST["region"]) && !empty($_POST["date"]) && !empty($_POST["name-event"])) {
