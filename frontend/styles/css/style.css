@@ -282,6 +282,10 @@ header .modal-login-form .login-admin-form button:hover {
 main {
   flex: 1;
 }
+main .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 main .error404 {
   background-image: url("../../assets/imgs/404.jpg");
   background-size: cover;
@@ -346,6 +350,9 @@ main .form-admin-container form button:hover {
     right: -35px;
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
+  main .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }
 /*/////////////////////////////// RESPONSIVE DESKTOP 1024px /////////////////////////////////////*/
@@ -397,6 +404,9 @@ main .form-admin-container form button:hover {
     width: 40%;
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
+  main .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }
 
