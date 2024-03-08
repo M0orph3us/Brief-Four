@@ -10,4 +10,6 @@ menuBurger();
 userContainer();
 loginModal();
 
-// functions for login constraints
+// functions for adminboard
+import { menuAdminboard } from "./scripts/adminboard.js";
+menuAdminboard();

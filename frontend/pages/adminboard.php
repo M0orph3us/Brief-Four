@@ -3,7 +3,7 @@ require '../../backend/config/autoload.php';
 require '../../backend/csrf-token/csrfRegister.php';
 $csrfAdminForm = csrfAdminForm();
 if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== true || empty($_SESSION["isConnectedAdmin"])) {
-    header("Location: ./home.php");
+    header("Location: ./404.php");
     exit();
 }
 $urlCsv = "../../backend/database/events.csv";
@@ -13,9 +13,44 @@ $getEvent = $event->readCsv();
 require './includes/header.php';
 ?>
 <main>
-    <div class="admin-container">
-        <div class="form-admin-container">
-            <h3>Add a new event</h3>
+    <div class="adminboard-container">
+        <ul>
+            <li><button id="events">events</button></li>
+            <li><button id="assign-volunteers">assign volunteers</button></li>
+            <li><button id="new-event">new event</button></li>
+        </ul>
+        <div class="events-container" id="events-container">
+            <h1>Events</h1>
+            <table border="2" id="table-desktop">
+                <thead>
+                    <tr>
+                        <?php
+                        foreach ($getEvent[0] as  $value) {
+                            echo "<th> $value </th>";
+                        };
+                        ?>
+                    </tr>
+                </thead>
+                <?php
+                for ($k = 1; $k < count($getEvent); $k++) {
+                    $region = $getEvent[$k][0];
+                    $eventName = $getEvent[$k][1];
+                    $date = $getEvent[$k][2];
+                    $comment = $getEvent[$k][3];
+                    echo "<tbody>";
+                    echo "<tr>";
+                    echo "<td> $region </td>";
+                    echo "<td> $eventName </td>";
+                    echo "<td> $date </td>";
+                    echo "<td> $comment </td>";
+                    echo "</tr>";
+                    echo "</tbody>";
+                }
+                ?>
+            </table>
+        </div>
+        <div class="form-new-event" id="form-new-event">
+            <h1>Add a new event</h1>
             <form action="../../backend/controller/adminForm.php" method="post">
                 <label for="region-select">region</label>
                 <select name="region" id="region-select" required>
@@ -46,31 +81,6 @@ require './includes/header.php';
                 <input type="hidden" name="csrf-admin-form" value="<?= $csrfAdminForm ?>">
                 <button type="submit">send</button>
             </form>
-        </div>
-        <div class="events-container">
-            <h2>Events</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <?php
-                        foreach ($getEvent[0] as  $value) {
-                            echo "<th> $value </th>";
-                        };
-                        ?>
-                    </tr>
-                </thead>
-                <?php
-                for ($k = 1; $k < count($getEvent); $k++) {
-                    foreach ($getEvent[$k] as  $value) {
-                        echo "<tbody>";
-                        echo "<tr>";
-                        echo "<td> $value </td> ";
-                        echo "</tr>";
-                        echo "</tbody>";
-                    }
-                }
-                ?>
-            </table>
         </div>
     </div>
 </main>

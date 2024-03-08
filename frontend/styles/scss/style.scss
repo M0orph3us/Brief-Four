@@ -119,7 +119,7 @@ header {
     .open-burger::before {
       border-radius: 5px;
       border: 1px solid black;
-      padding: 5px;
+      padding: 2px 5px;
     }
 
     .close-burger {
@@ -130,6 +130,7 @@ header {
       z-index: 3;
       position: absolute;
       padding: 1rem;
+      border-radius: 5px;
       top: 60px;
       right: 0;
       background-color: $secondary-color;
@@ -287,6 +288,78 @@ main {
     height: 100%;
   }
 
+  .adminboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    ul {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      li {
+        button {
+          @include template-btn;
+          &:first-child {
+            height: 63px;
+          }
+        }
+      }
+    }
+    .events-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h1 {
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+        border: 2px solid black;
+        background-color: $primary-color;
+        thead {
+          tr {
+            th {
+              color: white;
+              padding: 0;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              color: white;
+              padding: 0 5px;
+            }
+          }
+        }
+      }
+    }
+    .form-new-event {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        label {
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+        button {
+          @include template-btn;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
 
   .admin-container {
     .form-admin-container {
@@ -330,4 +403,3 @@ main {
 @media (min-width: 1024px) {
   @import "desktop";
 }
-

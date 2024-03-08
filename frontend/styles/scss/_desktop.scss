@@ -40,6 +40,8 @@ header {
 
       button {
         @include template-btn;
+        background-color: white;
+        color: black;
       }
     }
   }
