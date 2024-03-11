@@ -69,7 +69,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('REGION', 'EVENT NAME', 'DATE', 'COMMENT');
+                $entete = array('REGION', 'EVENT NAME', 'DATE', 'NOTE');
                 fputcsv($this->openWriteCsv(), $entete);
             }
         }

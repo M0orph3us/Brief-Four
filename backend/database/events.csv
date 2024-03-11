@@ -1,3 +1,4 @@
-REGION,"EVENT NAME",DATE,COMMENT
-Auvergne-Rhone-Alpes,Testbbbbb,20/03/2024,zzzzzz
-Auvergne-Rhone-Alpes,Testbbbbb,20/03/2024,zzzzzz
+REGION,"EVENT NAME",DATE,NOTE
+Auvergne-Rhone-Alpes,Testbbbbb,20/03/24,zzzzzz
+Provence-Alpes-Cote d'Azur,Testbbbbb,20/03/24,zzzzzz
+Bourgogne-Franche-Comté,Testbbbbb,20/03/24,zzzzzz

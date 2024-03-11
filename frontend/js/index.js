@@ -18,3 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuAdminboard();
   }
 });
+
+// AJAX for screen width user for backend
+import { getScreenUser } from "./scripts/getScreenUser.js";
+getScreenUser();

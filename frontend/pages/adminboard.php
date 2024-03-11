@@ -6,13 +6,24 @@ if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== t
     header("Location: ./404.php");
     exit();
 }
-$urlCsv = "../../backend/database/events.csv";
-$event = new Database($urlCsv);
-$getEvent = $event->readCsv();
-
 require './includes/header.php';
+$urlCsv = "../../backend/database/events.csv";
+$events = new Database($urlCsv);
+$getEvents = $events->readCsv();
+
+$screenWidth = $_SESSION["width"];
+
+
+
 ?>
 <main>
+    <?php
+    if ($screenWidth < 768) {
+        echo "<p>mobile</p>";
+    } else {
+        echo "<p>desktop</p>";
+    }
+    ?>
     <div class="adminboard-container">
         <ul>
             <li><button id="events">events</button></li>
@@ -25,23 +36,27 @@ require './includes/header.php';
                 <thead>
                     <tr>
                         <?php
-                        foreach ($getEvent[0] as  $value) {
+                        foreach ($getEvents[0] as  $value) {
                             echo "<th> $value </th>";
                         };
                         ?>
                     </tr>
                 </thead>
                 <?php
-                for ($k = 1; $k < count($getEvent); $k++) {
-                    $region = $getEvent[$k][0];
-                    $eventName = $getEvent[$k][1];
-                    $date = $getEvent[$k][2];
-                    $comment = $getEvent[$k][3];
+                for ($k = 1; $k < count($getEvents); $k++) {
+                    $region = $getEvents[$k][0];
+                    $eventName = $getEvents[$k][1];
+                    $getDate = $getEvents[$k][2];
+                    $date = DateTimeImmutable::createFromFormat('d/m/y', $getDate);
+                    $currentDate = new DateTimeImmutable();
+                    $diff = $currentDate->diff($date);
+                    $dayLeft = $diff->format('%a');
+                    $comment = $getEvents[$k][3];
                     echo "<tbody>";
                     echo "<tr>";
                     echo "<td> $region </td>";
                     echo "<td> $eventName </td>";
-                    echo "<td> $date </td>";
+                    echo "<td> $dayLeft day(s) </td>";
                     echo "<td> $comment </td>";
                     echo "</tr>";
                     echo "</tbody>";

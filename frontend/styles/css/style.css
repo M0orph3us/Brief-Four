@@ -313,7 +313,7 @@ main .grid-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: 30px;
-  row-gap: 20px;
+  row-gap: 40px;
 }
 main .grid-container .card-event-container {
   border-radius: 25px;
@@ -333,6 +333,8 @@ main .error404 {
   height: 100%;
 }
 main .adminboard-container {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   padding: 20px;
   flex-direction: column;
@@ -390,6 +392,7 @@ main .adminboard-container .form-new-event {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  background-color: #f9f9f9;
   box-shadow: 4px 4px 4px 2px lightgray;
   padding: 20px;
 }
@@ -761,7 +764,7 @@ main .metaMissions .myMissions {
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   main .grid-container {
-    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
   }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }
