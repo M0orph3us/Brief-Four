@@ -12,4 +12,9 @@ loginModal();
 
 // functions for adminboard
 import { menuAdminboard } from "./scripts/adminboard.js";
-menuAdminboard();
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname;
+  if (currentPage === "/Brief-Four/frontend/pages/adminboard.php") {
+    menuAdminboard();
+  }
+});

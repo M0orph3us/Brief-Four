@@ -88,9 +88,6 @@ body {
 body {
   z-index: 1;
   font-family: "Poppins";
-  // background-image: url("../../assets/imgs/bcg-img.webp");
-  // background-size: cover;
-  // background-position: center;
 }
 
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
@@ -276,10 +273,29 @@ header {
 main {
   flex: 1;
 
+  /* home page */
+  .title-event-home {
+    text-transform: uppercase;
+  }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
+
+    .card-event-container {
+      border-radius: 25px;
+      background-color: $content;
+      box-shadow: 4px 4px 4px 2px lightgray;
+      p {
+        width: max-content;
+        text-transform: capitalize;
+        padding: 10px;
+      }
+    }
   }
+
+  /* error page */
   .error404 {
     background-image: url("../../assets/imgs/404.jpg");
     background-size: cover;
@@ -288,13 +304,14 @@ main {
     height: 100%;
   }
 
+  /* admin page */
   .adminboard-container {
     display: flex;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     ul {
-      padding-top: 10px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -343,6 +360,8 @@ main {
       align-items: center;
       justify-content: center;
       gap: 10px;
+      box-shadow: 4px 4px 4px 2px lightgray;
+      padding: 20px;
       form {
         display: flex;
         flex-direction: column;
@@ -353,6 +372,17 @@ main {
           text-transform: capitalize;
           font-weight: bold;
         }
+        input {
+          width: 100%;
+          border-radius: 5px;
+          height: 30px;
+          border: 1px solid lightgray;
+          background-color: $main-bcg;
+        }
+
+        input:invalid {
+          border: 1px solid $alert;
+        }
         button {
           @include template-btn;
           margin-top: 5px;
@@ -361,33 +391,33 @@ main {
     }
   }
 
-  .admin-container {
-    .form-admin-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      height: 80%;
+  // .admin-container {
+  //   .form-admin-container {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     align-items: center;
+  //     gap: 50px;
+  //     height: 80%;
 
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+  //     form {
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //       justify-content: center;
+  //       gap: 10px;
 
-        label {
-          font-weight: 600;
-          text-transform: capitalize;
-          color: $text-color;
-        }
-        button {
-          @include template-btn;
-        }
-      }
-    }
-  }
+  //       label {
+  //         font-weight: 600;
+  //         text-transform: capitalize;
+  //         color: $text-color;
+  //       }
+  //       button {
+  //         @include template-btn;
+  //       }
+  //     }
+  //   }
+  // }
 
   /***************************REGISTER FORM****************************/
   display: flex;
@@ -418,14 +448,15 @@ main {
     gap: 5px;
     margin-bottom: 20px;
 
-    .formCompletionIndicator1, .formCompletionIndicator2, .formCompletionIndicator3 {
+    .formCompletionIndicator1,
+    .formCompletionIndicator2,
+    .formCompletionIndicator3 {
       height: 30px;
       width: 30px;
       border-radius: 50%;
       background-color: $primary-color;
     }
   }
-
 
   .containerForm {
     display: flex;
@@ -446,7 +477,9 @@ main {
       gap: 25px;
       width: 100%;
 
-      .formPart1, .formPart2, .formPart3 {
+      .formPart1,
+      .formPart2,
+      .formPart3 {
         display: none;
         justify-content: center;
         align-items: center;
@@ -472,9 +505,8 @@ main {
           border-radius: 1px;
           border: none;
           border: 1px solid lightgray;
-          background-color: #F9F9F9;
+          background-color: #f9f9f9;
         }
-
       }
 
       .formPart1 {
@@ -552,7 +584,9 @@ main {
     margin-bottom: 30px;
     padding: 4%;
 
-    .personalInfos, .availability, .expression {
+    .personalInfos,
+    .availability,
+    .expression {
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -580,11 +614,11 @@ main {
         height: 320px;
         width: 100%;
         gap: 15px;
-      
+
         p {
           margin-left: 15px;
         }
-      } 
+      }
     }
   }
 
@@ -622,12 +656,7 @@ main {
       background-color: $content;
     }
   }
-
-  
 }
-
-
-
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 
@@ -642,4 +671,3 @@ main {
 @media (min-width: 1024px) {
   @import "desktop";
 }
-

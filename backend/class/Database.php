@@ -82,7 +82,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'PHONE', 'MAIL', 'REGION', 'AVAILABILITY DAY', 'AVAILABILITY HOUR', 'PRIVILIGED POST', 'FREE EXPRESSION');
+                $entete = array('FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'PHONE', 'MAIL', 'REGION', 'AVAILABILITY DAY', 'AVAILABILITY HOUR', 'PRIVILIGED POST', 'FREE EXPRESSION', 'REGISTER DATE');
                 fputcsv($this->openWriteCsv(), $entete);
             }
         }
