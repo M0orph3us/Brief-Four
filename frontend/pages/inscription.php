@@ -5,7 +5,7 @@ require './includes/header.php';
 $csrfRegister = csrfVolunteersForm();
 ?>
 <main>
-    <h1>Formulaire d'inscription</h1>
+    <h1 class="registerFormTitle">Formulaire d'inscription</h1>
     <div class="titleUnderline"></div>
     <div class="containerFormCompletionIndicator">
         <div class="formCompletionIndicator1"></div>
@@ -23,11 +23,12 @@ $csrfRegister = csrfVolunteersForm();
                 <label for="lastName">Nom</label>
                 <input type="text" id="lastName" name="lastName" required>
 
-                <label for="age">Nom</label>
+                <label for="age">Age</label>
                 <input type="number" id="age" name="age" required>
 
                 <label for="sex">Sexe</label>
                 <select name="sex" id="sex" required>
+                    <option value="noSelection" disabled selected>Sélectionner</option>
                     <option value="femme">Femme</option>
                     <option value="homme">Homme</option>
                     <option value="secret">Secret</option>
@@ -44,29 +45,32 @@ $csrfRegister = csrfVolunteersForm();
                 <h2>Disponibilités</h2>
                 <label for="region">Région</label>
                 <select name="region" id="region" required>
-                    <option value="ar">Auvergne-Rhône-Alpes</option>
-                    <option value="bf">Bourgogne-Franche-Comté</option>
-                    <option value="br">Bretagne</option>
-                    <option value="cv">Centre-Val de Loire</option>
-                    <option value="cr">Corse</option>
-                    <option value="ge">Grand Est</option>
-                    <option value="hf">Hauts-de-France</option>
-                    <option value="if">Île-de-France</option>
-                    <option value="nm">Normandie</option>
-                    <option value="na">Nouvelle-Aquitaine</option>
-                    <option value="oc">Occitanie</option>
-                    <option value="pl">Pays de la Loire</option>
-                    <option value="pa">Provence-Alpes-Côte d'Azur</option>
+                    <option value="noSelection" disabled selected>Sélectionner</option>
+                    <option value="Auvergne-Rhone-Alpes">Auvergne-Rhône-Alpes</option>
+                    <option value="Bourgogne-Franche-Comte">Bourgogne-Franche-Comté</option>
+                    <option value="Bretagne">Bretagne</option>
+                    <option value="Centre-Val de Loire">Centre-Val de Loire</option>
+                    <option value="Corse">Corse</option>
+                    <option value="Grand Est">Grand Est</option>
+                    <option value="Hauts-de-France">Hauts-de-France</option>
+                    <option value="Ile-de-France">Île-de-France</option>
+                    <option value="Normandie">Normandie</option>
+                    <option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+                    <option value="Occitanie">Occitanie</option>
+                    <option value="Pays de la Loire">Pays de la Loire</option>
+                    <option value="Provence-Alpes-Cote d Azur">Provence-Alpes-Côte d'Azur</option>
                 </select>
 
                 <label for="dateAvailability">Disponibilité jour</label>
                 <select name="dateAvailability" id="dateAvailability" required>
+                    <option value="noSelection" disabled selected>Sélectionner</option>
                     <option value="semaine">Semaine</option>
                     <option value="weekEnd">Week-end</option>
                 </select>
 
                 <label for="hourAvailability">Disponibilité horaire</label>
                 <select name="hourAvailability" id="hourAvailability" required>
+                    <option value="noSelection" disabled selected>Sélectionner</option>
                     <option value="matin">Matin</option>
                     <option value="apresMidi">Après-midi</option>
                     <option value="soir">Soir</option>
@@ -75,6 +79,7 @@ $csrfRegister = csrfVolunteersForm();
 
                 <label for="privilegedWork">Poste privilégié</label>
                 <select name="privilegedWork" id="privilegedWork">
+                    <option value="noSelection" disabled selected>Sélectionner</option>
                     <option value="securite">Sécurité</option>
                     <option value="bar">Bar</option>
                     <option value="technique">Technique</option>
@@ -89,7 +94,11 @@ $csrfRegister = csrfVolunteersForm();
             </div>
             <input type="submit" class="submit" value="Soumettre">
         </form>
+        <a href="./registerSuccess.php">
+        <button class="following">TEST</button>
+        </a>
     </div>
 </main>
 <?php
 require './includes/footer.php';
+?>
