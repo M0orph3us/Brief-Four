@@ -5,6 +5,7 @@ require './includes/header.php';
 $csrfRegister = csrfVolunteersForm();
 ?>
 <main>
+<div class="alternativeMain">
     <h1 class="registerFormTitle">Formulaire d'inscription</h1>
     <div class="titleUnderline"></div>
     <div class="containerFormCompletionIndicator">
@@ -94,11 +95,18 @@ $csrfRegister = csrfVolunteersForm();
             </div>
             <input type="submit" class="submit" value="Soumettre">
         </form>
-        <a href="./registerSuccess.php">
-        <button class="following">TEST</button>
+        <a href="#">
+        <button class="following" id="following">TEST</button>
+        </a>
+
+        <a href="#">
+        <button class="following2" id="following2">TEST</button>
         </a>
     </div>
+</div>
+
 </main>
+<script src="../js/scripts/formChecker.js"></script>
 <?php
 require './includes/footer.php';
 ?>

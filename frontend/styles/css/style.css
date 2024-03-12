@@ -294,14 +294,6 @@ header .modal-login-form .login-admin-form button:hover {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
-  /***************************REGISTER FORM****************************/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  /***********************REGISTER SUCCESS*****************************/
-  /********************************PROFIL**********************************/
 }
 main .grid-container {
   display: grid;
@@ -435,18 +427,28 @@ main .admin-container .form-admin-container form button:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
-main .registerFormTitle {
+main .alternativeMain {
+  /***************************REGISTER FORM****************************/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /***********************REGISTER SUCCESS*****************************/
+  /********************************PROFIL**********************************/
+}
+main .alternativeMain .registerFormTitle {
   margin-top: 80px;
   margin-bottom: 20px;
   word-break: break-word;
 }
-main .titleUnderline {
+main .alternativeMain .titleUnderline {
   width: 12%;
   height: 1px;
   background: #474747;
   margin-bottom: 30px;
 }
-main .containerFormCompletionIndicator {
+main .alternativeMain .containerFormCompletionIndicator {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -455,13 +457,13 @@ main .containerFormCompletionIndicator {
   gap: 5px;
   margin-bottom: 20px;
 }
-main .containerFormCompletionIndicator .formCompletionIndicator1, main .containerFormCompletionIndicator .formCompletionIndicator2, main .containerFormCompletionIndicator .formCompletionIndicator3 {
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator1, main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator2, main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator3 {
   height: 30px;
   width: 30px;
   border-radius: 50%;
   background-color: #445aff;
 }
-main .containerForm {
+main .alternativeMain .containerForm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -472,7 +474,7 @@ main .containerForm {
   gap: 10px;
   box-shadow: 4px 4px 4px 2px lightgray;
 }
-main .containerForm form {
+main .alternativeMain .containerForm form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -480,14 +482,14 @@ main .containerForm form {
   gap: 25px;
   width: 100%;
 }
-main .containerForm form .formPart1, main .containerForm form .formPart2, main .containerForm form .formPart3 {
+main .alternativeMain .containerForm form .formPart1, main .alternativeMain .containerForm form .formPart2, main .alternativeMain .containerForm form .formPart3 {
   display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
 }
-main .containerForm form .formPart1 input, main .containerForm form .formPart2 input, main .containerForm form .formPart3 input {
+main .alternativeMain .containerForm form .formPart1 input, main .alternativeMain .containerForm form .formPart2 input, main .alternativeMain .containerForm form .formPart3 input {
   width: 100%;
   border-radius: 5px;
   border: none;
@@ -495,10 +497,10 @@ main .containerForm form .formPart1 input, main .containerForm form .formPart2 i
   border: 1px solid lightgray;
   background-color: #fafafa;
 }
-main .containerForm form .formPart1 input:invalid, main .containerForm form .formPart2 input:invalid, main .containerForm form .formPart3 input:invalid {
+main .alternativeMain .containerForm form .formPart1 input:invalid, main .alternativeMain .containerForm form .formPart2 input:invalid, main .alternativeMain .containerForm form .formPart3 input:invalid {
   border: 1px solid #fa3457;
 }
-main .containerForm form .formPart1 select, main .containerForm form .formPart2 select, main .containerForm form .formPart3 select {
+main .alternativeMain .containerForm form .formPart1 select, main .alternativeMain .containerForm form .formPart2 select, main .alternativeMain .containerForm form .formPart3 select {
   width: 100%;
   height: 30px;
   border-radius: 1px;
@@ -506,16 +508,16 @@ main .containerForm form .formPart1 select, main .containerForm form .formPart2 
   border: 1px solid lightgray;
   background-color: #F9F9F9;
 }
-main .containerForm form .formPart1 {
+main .alternativeMain .containerForm form .formPart1 {
   display: flex;
 }
-main .containerForm form .formPart2 {
+main .alternativeMain .containerForm form .formPart2 {
   display: flex;
 }
-main .containerForm form .formPart3 {
+main .alternativeMain .containerForm form .formPart3 {
   display: flex;
 }
-main .containerForm form .submit {
+main .alternativeMain .containerForm form .submit {
   text-transform: uppercase;
   background-color: #445aff;
   padding: 0.5rem 0.7rem;
@@ -527,11 +529,11 @@ main .containerForm form .submit {
   transition: 0.5s background-color;
   border: none;
 }
-main .containerForm form .submit:hover {
+main .alternativeMain .containerForm form .submit:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
-main .containerForm .following {
+main .alternativeMain .containerForm .following {
   text-transform: uppercase;
   background-color: #445aff;
   padding: 0.5rem 0.7rem;
@@ -543,15 +545,31 @@ main .containerForm .following {
   transition: 0.5s background-color;
   border: none;
 }
-main .containerForm .following:hover {
+main .alternativeMain .containerForm .following:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
-main .successTitle {
+main .alternativeMain .containerForm .following2 {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .alternativeMain .containerForm .following2:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .alternativeMain .successTitle {
   color: #78ff81;
   margin-bottom: 30px;
 }
-main .containerId {
+main .alternativeMain .containerId {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -562,7 +580,7 @@ main .containerId {
   margin: 25px;
   box-shadow: 4px 4px 4px 2px lightgray;
 }
-main .containerId .userId {
+main .alternativeMain .containerId .userId {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -570,7 +588,7 @@ main .containerId .userId {
   border: 1px solid #474747;
   padding: 25px;
 }
-main .finished {
+main .alternativeMain .finished {
   text-transform: uppercase;
   background-color: #445aff;
   padding: 0.5rem 0.7rem;
@@ -582,18 +600,18 @@ main .finished {
   transition: 0.5s background-color;
   border: none;
 }
-main .finished:hover {
+main .alternativeMain .finished:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
-main .topProfil {
+main .alternativeMain .topProfil {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
 }
-main .metaInfos {
+main .alternativeMain .metaInfos {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -604,7 +622,7 @@ main .metaInfos {
   margin-bottom: 30px;
   padding: 4%;
 }
-main .metaInfos .personalInfos, main .metaInfos .availability, main .metaInfos .expression {
+main .alternativeMain .metaInfos .personalInfos, main .alternativeMain .metaInfos .availability, main .alternativeMain .metaInfos .expression {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -614,7 +632,7 @@ main .metaInfos .personalInfos, main .metaInfos .availability, main .metaInfos .
   background-color: #f9f9f9;
   box-shadow: 4px 4px 4px 2px lightgray;
 }
-main .metaInfos .personalInfos .titleProfil, main .metaInfos .availability .titleProfil, main .metaInfos .expression .titleProfil {
+main .alternativeMain .metaInfos .personalInfos .titleProfil, main .alternativeMain .metaInfos .availability .titleProfil, main .alternativeMain .metaInfos .expression .titleProfil {
   width: 100%;
   height: 80px;
   display: flex;
@@ -623,7 +641,7 @@ main .metaInfos .personalInfos .titleProfil, main .metaInfos .availability .titl
   border: 1px solid #474747;
   border-radius: 2px;
 }
-main .metaInfos .personalInfos .infosProfil, main .metaInfos .availability .infosProfil, main .metaInfos .expression .infosProfil {
+main .alternativeMain .metaInfos .personalInfos .infosProfil, main .alternativeMain .metaInfos .availability .infosProfil, main .alternativeMain .metaInfos .expression .infosProfil {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -632,10 +650,10 @@ main .metaInfos .personalInfos .infosProfil, main .metaInfos .availability .info
   width: 100%;
   gap: 15px;
 }
-main .metaInfos .personalInfos .infosProfil p, main .metaInfos .availability .infosProfil p, main .metaInfos .expression .infosProfil p {
+main .alternativeMain .metaInfos .personalInfos .infosProfil p, main .alternativeMain .metaInfos .availability .infosProfil p, main .alternativeMain .metaInfos .expression .infosProfil p {
   margin-left: 15px;
 }
-main .metaMissions {
+main .alternativeMain .metaMissions {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -646,7 +664,7 @@ main .metaMissions {
   box-shadow: 4px 4px 4px 2px lightgray;
   margin-top: 60px;
 }
-main .metaMissions .titleMissions {
+main .alternativeMain .metaMissions .titleMissions {
   width: 100%;
   height: 80px;
   border: 1px solid black;
@@ -655,7 +673,7 @@ main .metaMissions .titleMissions {
   justify-content: center;
   align-items: center;
 }
-main .metaMissions .myMissions {
+main .alternativeMain .metaMissions .myMissions {
   width: 100%;
   padding: 25px;
   height: 500px;
