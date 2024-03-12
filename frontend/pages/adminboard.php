@@ -1,6 +1,7 @@
 <?php
 require '../../backend/config/autoload.php';
 require '../../backend/csrf-token/csrfRegister.php';
+require './components/alertRegisterAdmin.php';
 $csrfAdminForm = csrfAdminForm();
 if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== true || empty($_SESSION["isConnectedAdmin"])) {
     header("Location: ./404.php");
@@ -17,13 +18,6 @@ $screenWidth = $_SESSION["width"];
 
 ?>
 <main>
-    <?php
-    if ($screenWidth < 768) {
-        echo "<p>mobile</p>";
-    } else {
-        echo "<p>desktop</p>";
-    }
-    ?>
     <div class="adminboard-container">
         <ul>
             <li><button id="events">events</button></li>
@@ -32,6 +26,14 @@ $screenWidth = $_SESSION["width"];
         </ul>
         <div class="events-container" id="events-container">
             <h1>Events</h1>
+            <?php
+            if (!empty($_SESSION['eventRegisted']) && $_SESSION['eventRegisted'] === true) {
+                echo "$valid";
+                $_SESSION['eventRegisted'] = '';
+            } else {
+                echo "$error";
+            }
+            ?>
             <table border="2" id="table-desktop">
                 <thead>
                     <tr>
@@ -51,7 +53,11 @@ $screenWidth = $_SESSION["width"];
                     $currentDate = new DateTimeImmutable();
                     $diff = $currentDate->diff($date);
                     $dayLeft = $diff->format('%a');
-                    $comment = $getEvents[$k][3];
+                    if (!empty($getEvents[$k][3])) {
+                        $comment = $getEvents[$k][3];
+                    } else {
+                        $comment = '';
+                    }
                     echo "<tbody>";
                     echo "<tr>";
                     echo "<td> $region </td>";
@@ -66,6 +72,7 @@ $screenWidth = $_SESSION["width"];
         </div>
         <div class="form-new-event" id="form-new-event">
             <h1>Add a new event</h1>
+
             <form action="../../backend/controller/adminForm.php" method="post">
                 <label for="region-select">region</label>
                 <select name="region" id="region-select" required>
@@ -91,7 +98,7 @@ $screenWidth = $_SESSION["width"];
                 <input type="text" name="name-event" id="name-event" minlength="3" maxlength="50" required>
 
                 <label for="comment-event">comment</label>
-                <input type="text" name="comment-event" id="comment-event" name="comment">
+                <input type="text" name="comment-event" id="comment-event">
 
                 <input type="hidden" name="csrf-admin-form" value="<?= $csrfAdminForm ?>">
                 <button type="submit">send</button>
