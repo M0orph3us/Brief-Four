@@ -7,7 +7,7 @@ if (isset($_POST["csrf-volunteer"]) && $_POST["csrf-volunteer"] === $_SESSION["c
 
         $_SESSION["isConnectedVolunteer"] = true;
         $_SESSION['csrf-volunteer'] = bin2hex(random_bytes(32));
-        header("Location: ../../frontend/pages/profil.php");
+        header("Location: ../../frontend/pages/home.php");
         exit();
     } else {
         $_SESSION['csrf-volunteer'] = bin2hex(random_bytes(32));

@@ -25,9 +25,9 @@ $screenWidth = $_SESSION["width"];
             <h1>Events</h1>
             <?php
             if (!empty($_SESSION['eventRegisted']) && $_SESSION['eventRegisted'] === true) {
-                echo "$valid";
+                echo "$success";
                 $_SESSION['eventRegisted'] = '';
-            } else {
+            } else if (!empty($_SESSION['eventRegisted']) && $_SESSION['eventRegisted'] === false) {
                 echo "$error";
                 $_SESSION['eventRegisted'] = '';
             }
@@ -78,7 +78,11 @@ $screenWidth = $_SESSION["width"];
                     echo "<tr>";
                     echo "<td>" . $event['region'] . "</td>";
                     echo "<td>" . $event['eventName'] . "</td>";
-                    echo "<td>" . $event['dayLeft'] . "day(s)</td>";
+                    if ($event['dayLeft'] < 5) {
+                        echo "<td class=error >" . $event['dayLeft'] . " day(s)</td>";
+                    } else {
+                        echo "<td>" . $event['dayLeft'] . " day(s)</td>";
+                    }
                     echo "<td>" . $event['comment'] . "</td>";
                     echo "</tr>";
                     echo "</tbody>";
@@ -86,7 +90,11 @@ $screenWidth = $_SESSION["width"];
                     echo "<div class=\" card-event-container\">";
                     echo "<p>region :" . $event['region'] . "</p>";
                     echo "<p>event name :" . $event['eventName'] . "</p>";
-                    echo "<p>date :" . $event['dayLeft'] . "</p>";
+                    if ($event['dayLeft'] < 5) {
+                        echo "<p class=error>date :" . $event['dayLeft'] . "</p>";
+                    } else {
+                        echo "<p>date :" . $event['dayLeft'] . "</p>";
+                    }
                     echo "<p>note :" . $event['comment'] . "</p>";
                     echo "</div>";
                 }

@@ -67,7 +67,17 @@ body {
   height: 100dvh;
 }
 
-/*/////////////////////////////////// IMPORT /////////////////////////////////////////////*/
+@keyframes alert {
+  0% {
+    padding: 10px;
+  }
+  50% {
+    padding: 12px;
+  }
+  100% {
+    padding: 10px;
+  }
+}
 /*/////////////////////////////// RESPONSIVE MOBIL 320px ///////////////////////////////////////*/
 :root {
   font-size: 16px;
@@ -294,9 +304,6 @@ header .modal-login-form .login-admin-form button:hover {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
-  /* home page */
-  /* error page */
-  /* admin page */
   /***************************REGISTER FORM****************************/
   /***********************REGISTER SUCCESS*****************************/
   /********************************PROFIL**********************************/
@@ -365,12 +372,30 @@ main .adminboard-container ul li button:first-child {
   height: 63px;
 }
 main .adminboard-container .events-container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 main .adminboard-container .events-container h1 {
   text-align: center;
+}
+main .adminboard-container .events-container .error {
+  background-color: #fa3457;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+main .adminboard-container .events-container .success {
+  background-color: #78ff81;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
 }
 main .adminboard-container .events-container .card-event-container {
   border-radius: 25px;
@@ -384,17 +409,18 @@ main .adminboard-container .events-container .card-event-container p {
   padding: 10px;
 }
 main .adminboard-container .events-container table {
+  text-align: center;
   border-collapse: collapse;
   border: 2px solid black;
   background-color: #445aff;
 }
 main .adminboard-container .events-container table thead tr th {
   color: white;
-  padding: 0;
+  padding: 10px;
 }
 main .adminboard-container .events-container table tbody tr td {
   color: white;
-  padding: 0 5px;
+  padding: 10px;
 }
 main .adminboard-container .form-new-event {
   display: none;
@@ -744,9 +770,9 @@ main .metaMissions .myMissions {
     gap: 2rem;
   }
   header .navbar-container-desktop .links-container li a {
-    color: #252525;
+    color: black;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
   }
   header .navbar-container-desktop .connections-container {
     display: flex;

@@ -1,9 +1,9 @@
 <?php
-/*session_start();
-if (!isset($_SESSION["isConnectedVolunteer"]) || $_SESSION["isConnectedVolunteer"] !== true || empty($_SESSION["isConnectedVolunteer"])) {
-    header("Location: ./404.php");
-    exit();
-}*/
+session_start();
+// if (!isset($_SESSION["isConnectedVolunteer"]) || $_SESSION["isConnectedVolunteer"] !== true || empty($_SESSION["isConnectedVolunteer"])) {
+//     header("Location: ./404.php");
+//     exit();
+// }
 require './includes/header.php';
 ?>
 <main class="profil">
@@ -45,7 +45,7 @@ require './includes/header.php';
             </div>
             <div class="infosProfil">
                 <p>Votre message :</p>
-            </div>    
+            </div>
         </section>
 
         <section class="metaMissions">
@@ -53,7 +53,7 @@ require './includes/header.php';
                 <h2>Mes missions</h2>
             </div>
             <div class="myMissions">
-                
+
             </div>
         </section>
     </div>
