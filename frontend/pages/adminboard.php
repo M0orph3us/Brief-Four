@@ -13,9 +13,6 @@ $events = new Database($urlCsv);
 $getEvents = $events->readCsv();
 
 $screenWidth = $_SESSION["width"];
-
-
-
 ?>
 <main>
     <div class="adminboard-container">
@@ -32,42 +29,69 @@ $screenWidth = $_SESSION["width"];
                 $_SESSION['eventRegisted'] = '';
             } else {
                 echo "$error";
+                $_SESSION['eventRegisted'] = '';
             }
-            ?>
-            <table border="2" id="table-desktop">
-                <thead>
-                    <tr>
-                        <?php
-                        foreach ($getEvents[0] as  $value) {
-                            echo "<th> $value </th>";
-                        };
-                        ?>
-                    </tr>
-                </thead>
-                <?php
-                for ($k = 1; $k < count($getEvents); $k++) {
-                    $region = $getEvents[$k][0];
-                    $eventName = $getEvents[$k][1];
-                    $getDate = $getEvents[$k][2];
-                    $date = DateTimeImmutable::createFromFormat('d/m/y', $getDate);
-                    $currentDate = new DateTimeImmutable();
-                    $diff = $currentDate->diff($date);
-                    $dayLeft = $diff->format('%a');
-                    if (!empty($getEvents[$k][3])) {
-                        $comment = $getEvents[$k][3];
-                    } else {
-                        $comment = '';
-                    }
+
+            if ($screenWidth > 768) {
+                echo '<table border="2" id="table-desktop">';
+                echo '<thead>';
+                echo '<tr>';
+
+                foreach ($getEvents[0] as  $value) {
+                    echo "<th> $value </th>";
+                };
+
+                echo '</tr>';
+                echo '</thead>';
+            }
+            $events = [];
+            for ($k = 1; $k < count($getEvents); $k++) {
+                $region = $getEvents[$k][0];
+                $eventName = $getEvents[$k][1];
+                $getDate = $getEvents[$k][2];
+                $date = DateTimeImmutable::createFromFormat('d/m/y', $getDate);
+                $currentDate = new DateTimeImmutable();
+                $diff = $currentDate->diff($date);
+
+                $dayLeft = $diff->format('%a');
+                if (!empty($getEvents[$k][3])) {
+                    $comment = $getEvents[$k][3];
+                } else {
+                    $comment = '';
+                }
+
+                $events[] = [
+                    'region' => $region,
+                    'eventName' => $eventName,
+                    'dayLeft' => $dayLeft,
+                    'comment' => $comment,
+                ];
+            }
+
+            usort($events, function ($a, $b) {
+                return $a['dayLeft'] - $b['dayLeft'];
+            });
+            foreach ($events as $event) {
+                if ($screenWidth > 768) {
+
                     echo "<tbody>";
                     echo "<tr>";
-                    echo "<td> $region </td>";
-                    echo "<td> $eventName </td>";
-                    echo "<td> $dayLeft day(s) </td>";
-                    echo "<td> $comment </td>";
+                    echo "<td>" . $event['region'] . "</td>";
+                    echo "<td>" . $event['eventName'] . "</td>";
+                    echo "<td>" . $event['dayLeft'] . "day(s)</td>";
+                    echo "<td>" . $event['comment'] . "</td>";
                     echo "</tr>";
                     echo "</tbody>";
+                } else if ($screenWidth < 768) {
+                    echo "<div class=\" card-event-container\">";
+                    echo "<p>region :" . $event['region'] . "</p>";
+                    echo "<p>event name :" . $event['eventName'] . "</p>";
+                    echo "<p>date :" . $event['dayLeft'] . "</p>";
+                    echo "<p>note :" . $event['comment'] . "</p>";
+                    echo "</div>";
                 }
-                ?>
+            }
+            ?>
             </table>
         </div>
         <div class="form-new-event" id="form-new-event">
@@ -104,6 +128,7 @@ $screenWidth = $_SESSION["width"];
                 <button type="submit">send</button>
             </form>
         </div>
+        <div class="form-volunteers-events" id="form-volunteers-events"></div>
     </div>
 </main>
 <?php

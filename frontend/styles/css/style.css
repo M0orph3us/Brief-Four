@@ -298,24 +298,23 @@ main {
   /* error page */
   /* admin page */
   /***************************REGISTER FORM****************************/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
   /***********************REGISTER SUCCESS*****************************/
   /********************************PROFIL**********************************/
 }
 main .title-event-home {
   text-transform: uppercase;
+  text-align: center;
 }
 main .grid-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: 30px;
   row-gap: 40px;
+  padding: 20px 0;
 }
 main .grid-container .card-event-container {
+  width: 90%;
+  margin: auto;
   border-radius: 25px;
   background-color: #f9f9f9;
   box-shadow: 4px 4px 4px 2px lightgray;
@@ -372,6 +371,17 @@ main .adminboard-container .events-container {
 }
 main .adminboard-container .events-container h1 {
   text-align: center;
+}
+main .adminboard-container .events-container .card-event-container {
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .adminboard-container .events-container .card-event-container p {
+  width: max-content;
+  text-transform: capitalize;
+  padding: 10px;
 }
 main .adminboard-container .events-container table {
   border-collapse: collapse;
