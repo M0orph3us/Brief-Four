@@ -32,4 +32,8 @@ if (isset($_POST['csrf-admin-form']) && $_POST['csrf-admin-form'] === $_SESSION[
         header("Location: ../../frontend/pages/adminboard.php");
         exit();
     }
+} else {
+    $_SESSION['csrf-admin-form'] = bin2hex(random_bytes(32));
+    header("Location: ../../frontend/pages/404.php");
+    exit();
 }
