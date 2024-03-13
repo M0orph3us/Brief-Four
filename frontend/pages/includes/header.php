@@ -1,11 +1,14 @@
 <?php
-require '../../backend/csrf-token/csrfLogin.php';
+$backend = '../../backend/';
+require $backend . 'csrf-token/csrfLogin.php';
+require $backend . 'config/varDump.php';
 $csrfAdmin = csrfAdminLogin();
 $csrfVolunteer = csrfVolunteersLogin();
 
 $uri = ($_SERVER['REQUEST_URI']);
 $pattern = ['/Brief-Four', '/frontend/pages/', '.php'];
 $title = ucfirst(str_replace($pattern, "", $uri));
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,15 +33,28 @@ $title = ucfirst(str_replace($pattern, "", $uri));
             </div>
             <i class="fa-solid fa-user fa-xl profil"></i>
             <div class="user-container" id="user-container">
-                <button type="button" class="btn-login" id="btn-login-mobile">login</button>
-                <a href="./inscription.php"><button type="button" class="btn-register-mobile"
-                        id="btn-register-mobile">register</button></a>
+                <?php
+                if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true || isset($_SESSION["isConnectedAdmin"]) && !empty($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === true) {
+                    echo '<a href=' . $backend . 'controller/logout.php><button type="button">logout</button></a>';
+                } else {
+                    echo '<button type="button" class="btn-login" id="btn-login-mobile">login</button>';
+                    echo '<a href="./inscription.php">
+                    <button type="button" class="btn-register-mobile" id="btn-register-mobile">register</button>
+                    </a>';
+                }
+                ?>
             </div>
             <div class="burger-container" id="burger-container">
                 <ul class="links-container-burger" id="links-container-burger">
-                    <li><a href="./test.php">lorem</a></li>
-                    <li><a href="./test.php">lorem</a></li>
-                    <li><a href="./test.php">lorem</a></li>
+                    <li><a href="./home.php">home</a></li>
+                    <?php
+                    if (isset($_SESSION["isConnectedAdmin"]) && !empty($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === true) {
+                        echo '<li><a href="./adminboard.php">admin</a></li>';
+                    }
+                    if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true) {
+                        echo '<li><a href="./profil.php">admin</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -47,15 +63,31 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <a href="./home.php"><img src="../assets/imgs/reseau.png" alt="logo" class="logo"></a>
             </div>
             <ul class="links-container" id="links-container">
-                <li><a href="./test.php">lorem</a></li>
-                <li><a href="./test.php">lorem</a></li>
-                <li><a href="./test.php">lorem</a></li>
+                <li><a href="./home.php">home</a></li>
+                <?php
+                if (isset($_SESSION["isConnectedAdmin"]) && !empty($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === true) {
+                    echo '<li><a href="./adminboard.php">admin</a></li>';
+                }
+                if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true) {
+                    echo '<li><a href="./profil.php">admin</a></li>';
+                }
+                ?>
             </ul>
             <div class="connections-container" id="connection-container">
-                <button type="button" class="btn-login" id="btn-login-desktop">login</button>
+                <!-- <button type="button" class="btn-login" id="btn-login-desktop">login</button>
                 <a href="./inscription.php"><button type="button" class="btn-register-desktop"
                         id="btn-register-desktop">register</button>
-                </a>
+                </a> -->
+                <?php
+                if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true || isset($_SESSION["isConnectedAdmin"]) && !empty($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === true) {
+                    echo '<a href=' . $backend . 'controller/logout.php><button type="button">logout</button></a>';
+                } else {
+                    echo '<button type="button" class="btn-login" id="btn-login-desktop">login</button>';
+                    echo '<a href="./inscription.php">
+                    <button type="button" class="btn-register-desktop" id="btn-register-desktop">register</button>
+                    </a>';
+                }
+                ?>
             </div>
         </div>
         <div class="modal-login-form" id="modal-login-form">

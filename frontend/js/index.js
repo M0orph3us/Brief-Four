@@ -1,5 +1,7 @@
 "use strict";
 
+const routeLocal = "/Brief-Four/frontend/pages/";
+
 // functions for menu-burger
 import {
   menuBurger,
@@ -10,6 +12,15 @@ menuBurger();
 userContainer();
 loginModal();
 
-// functions for adminboard
+// function for adminboard
 import { menuAdminboard } from "./scripts/adminboard.js";
-menuAdminboard();
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname;
+  if (currentPage === `${routeLocal}adminboard.php`) {
+    menuAdminboard();
+  }
+});
+
+// AJAX for screen width user for responsive page php
+import { getScreenUser } from "./scripts/getScreenUser.js";
+getScreenUser();

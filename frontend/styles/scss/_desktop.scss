@@ -27,9 +27,9 @@ header {
 
       li {
         a {
-          color: $text-color;
+          color: black;
           text-transform: uppercase;
-          font-weight: bold;
+          font-weight: 900;
         }
       }
     }
@@ -54,7 +54,7 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   .grid-container {
-    grid-template-columns: repeat(6, 1fr);
+    column-gap: 40px;
   }
 }
 

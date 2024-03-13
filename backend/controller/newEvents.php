@@ -9,7 +9,7 @@ if (isset($_POST['csrf-admin-form']) && $_POST['csrf-admin-form'] === $_SESSION[
         $regionSanitize = htmlentities($region);
 
         $date = new DateTimeImmutable($_POST["date"]);
-        $dateFormated = $date->format("d/m/Y");
+        $dateFormated = $date->format("d/m/y");
 
         $nameEvent = $_POST["name-event"];
         $nameEventSanitize = htmlentities($nameEvent);
