@@ -100,7 +100,7 @@ $csrfRegister = csrfVolunteersForm();
                     <input type="textarea" id="freeExpression" name="freeExpression" required>
                 </div>
                 <input type="hidden" name="csrf-volunteers-form" value=<?= $csrfRegister ?>>
-                <input type="submit" class="submit" value="Soumettre">
+                <input type="submit" class="submit" value="Soumettre" onsubmit="return formChecker3()">
             </form>
         </div>
     </div>

@@ -1,10 +1,18 @@
 <?php
-session_start();
+require '../../backend/config/autoload.php';
 // if (!isset($_SESSION["isConnectedVolunteer"]) || $_SESSION["isConnectedVolunteer"] !== true || empty($_SESSION["isConnectedVolunteer"])) {
 //     header("Location: ./404.php");
 //     exit();
 // }
 require './includes/header.php';
+
+$userProfil = new Database('../../backend/database/users.csv');
+$getUserProfil = $userProfil->readCsv();
+
+$userCode = '0f3960c4';
+
+
+
 ?>
 <main>
 <div class="alternativeMain">
@@ -18,13 +26,17 @@ require './includes/header.php';
                 <h2>Infos personnelles</h2>
             </div>
             <div class="infosProfil">
-                <p>Prénom :</p>
-                <p>Nom :</p>
-                <p>Age :</p>
-                <p>Sexe :</p>
-                <p>Tél :</p>
-                <p>Email :</p>
-                <p>Date d'inscription :</p>
+            <?php foreach($getUserProfil as $user) {
+            if($userCode == $user[12]) {
+                echo "<p>Prénom : $user[0] </p>";
+                echo "<p>Nom :</p>";
+                echo "<p>Age :</p>";
+                echo "<p>Sexe :</p>";
+                echo "<p>Tél :</p>";
+                echo "<p>Email :</p>";
+                echo "<p>Date d'inscription :</p>";
+                };
+            }; ?>
             </div>
         </section>
 

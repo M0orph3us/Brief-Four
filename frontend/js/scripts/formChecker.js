@@ -5,6 +5,7 @@ export function formChecker1() {
   let sexSelect = document.getElementById("sex");
   let phoneInput = document.getElementById("tel");
   let emailInput = document.getElementById("email");
+
   if (firstNameInput.value.length < 3 || firstNameInput.value.length > 30) {
     alert("Le prénom est trop long, ou trop court !");
     return;
@@ -40,7 +41,7 @@ export function formChecker1() {
     return;
   }
 
-  if (emailInput.value.length < 3 || emailInput.value.length > 256) {
+  if (emailInput.value.length < 5 || emailInput.value.length > 256) {
     alert("L'adresse email n'est pas correct !");
     return;
   }
@@ -109,5 +110,7 @@ export function formChecker3() {
   if (expressionInput.value.length < 30 || expressionInput.value.length > 500) {
     alert("Votre billet d'humeur est trop court, ou trop long !");
     return;
+  } else {
+    return true;
   }
 }
