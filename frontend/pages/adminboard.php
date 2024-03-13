@@ -3,13 +3,19 @@ require '../../backend/config/autoload.php';
 require '../../backend/csrf-token/csrfRegister.php';
 require './components/alertRegisterAdmin.php';
 $csrfAdminForm = csrfAdminForm();
+$csrfAddVolunteersByEvent = csrfAddVolunteersByEventsForm();
 if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== true || empty($_SESSION["isConnectedAdmin"])) {
     header("Location: ./404.php");
     exit();
 }
 require './includes/header.php';
-$urlCsv = "../../backend/database/events.csv";
-$events = new Database($urlCsv);
+
+$urlCsvAddVolunteersByEvent = '../../backend/database/volunteersByEvent.csv';
+$volunteersByEvent = new Database($urlCsvAddVolunteersByEvent);
+$setvolunteersByEvent = $volunteersByEvent->readCsv();
+
+$urlCsvEvent = "../../backend/database/events.csv";
+$events = new Database($urlCsvEvent);
 $getEvents = $events->readCsv();
 
 $screenWidth = $_SESSION["width"];
@@ -105,7 +111,7 @@ $screenWidth = $_SESSION["width"];
         <div class="form-new-event" id="form-new-event">
             <h1>Add a new event</h1>
 
-            <form action="../../backend/controller/adminForm.php" method="post">
+            <form action="../../backend/controller/newEvents.php" method="post">
                 <label for="region-select">region</label>
                 <select name="region" id="region-select" required>
                     <option value="Auvergne-Rhone-Alpes">Auvergne-Rhône-Alpes</option>
@@ -136,7 +142,27 @@ $screenWidth = $_SESSION["width"];
                 <button type="submit">send</button>
             </form>
         </div>
-        <div class="form-volunteers-events" id="form-volunteers-events"></div>
+        <div class="form-volunteers-events" id="form-volunteers-events">
+            <form action="../../backend/controller/addVolunteersByEvent.php" method="post">
+                <label for="volunteers-select"></label>
+                <select name="volunteers" id="volunteers-select">
+                    <?php
+
+                    ?>
+
+                </select>
+                <label for="event-select"></label>
+                <select name="event" id="event-select">
+                    <?php
+
+                    ?>
+
+                </select>
+                <input type="hidden" value="<?= $csrfAddVolunteersByEvent ?>">
+                <button type="submit"></button>
+            </form>
+
+        </div>
     </div>
 </main>
 <?php

@@ -17,3 +17,11 @@ function csrfVolunteersForm()
     }
     return $_SESSION['csrf-volunteers-form'];
 }
+
+function csrfAddVolunteersByEventsForm()
+{
+    if (!isset($_SESSION['csrf-add-volunteers-by-event-form'])) {
+        $_SESSION['csrf-add-volunteers-by-event-form'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf-add-volunteers-by-event-form'];
+}

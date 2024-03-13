@@ -311,6 +311,7 @@ main {
 main .title-event-home {
   text-transform: uppercase;
   text-align: center;
+  margin-top: 10px;
 }
 main .grid-container {
   display: grid;

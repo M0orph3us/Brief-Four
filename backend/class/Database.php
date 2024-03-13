@@ -77,6 +77,19 @@ class Database
         fclose($this->openWriteCsv());
     }
 
+    // function to write a new volunteers by event
+    public function writeVolunteersByevent(array $array)
+    {
+        if ($this->openWriteCsv() !== false) {
+            if (filesize($this->urlCsv) == 0) {
+                $entete = array('EVENT', 'VOLUNTEER');
+                fputcsv($this->openWriteCsv(), $entete);
+            }
+        }
+        fputcsv($this->openWriteCsv(), $array);
+        fclose($this->openWriteCsv());
+    }
+
     // function to write a new user
     public function writeUsers(array $array)
     {
