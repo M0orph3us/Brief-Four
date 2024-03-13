@@ -6,7 +6,8 @@ session_start();
 // }
 require './includes/header.php';
 ?>
-<main class="profil">
+<main>
+<div class="alternativeMain">
     <div class="topProfil">
         <h1 class="registerFormTitle">Mon compte</h1>
         <div class="titleUnderline"></div>
@@ -57,6 +58,7 @@ require './includes/header.php';
             </div>
         </section>
     </div>
+</div>
 </main>
 <?php
 require './includes/footer.php';

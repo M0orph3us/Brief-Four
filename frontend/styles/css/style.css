@@ -470,6 +470,282 @@ main .adminboard-container .form-new-event form button:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
+main .alternativeMain {
+  /***************************REGISTER FORM****************************/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /***********************REGISTER SUCCESS*****************************/
+  /********************************PROFIL**********************************/
+}
+main .alternativeMain .registerFormTitle {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+main .alternativeMain .titleUnderline {
+  width: 12%;
+  height: 1px;
+  background: #474747;
+  margin-bottom: 30px;
+}
+main .alternativeMain .containerFormCompletionIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 30px;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator1,
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator2,
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator3 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #445aff;
+}
+main .alternativeMain .containerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 25px;
+  margin: 25px 25px 80px;
+  gap: 10px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .alternativeMain .containerForm form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+main .alternativeMain .containerForm form .formPart1,
+main .alternativeMain .containerForm form .formPart2,
+main .alternativeMain .containerForm form .formPart3 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+main .alternativeMain .containerForm form .formPart1 input,
+main .alternativeMain .containerForm form .formPart2 input,
+main .alternativeMain .containerForm form .formPart3 input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  border: 1px solid lightgray;
+  background-color: #fafafa;
+}
+main .alternativeMain .containerForm form .formPart1 input:invalid,
+main .alternativeMain .containerForm form .formPart2 input:invalid,
+main .alternativeMain .containerForm form .formPart3 input:invalid {
+  border: 1px solid #fa3457;
+}
+main .alternativeMain .containerForm form .formPart1 select,
+main .alternativeMain .containerForm form .formPart2 select,
+main .alternativeMain .containerForm form .formPart3 select {
+  width: 100%;
+  height: 30px;
+  border-radius: 1px;
+  border: none;
+  border: 1px solid lightgray;
+  background-color: #f9f9f9;
+}
+main .alternativeMain .containerForm form .formPart1 {
+  display: flex;
+}
+main .alternativeMain .containerForm form .formPart2 {
+  display: flex;
+}
+main .alternativeMain .containerForm form .formPart3 {
+  display: flex;
+}
+main .alternativeMain .containerForm form .submit {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .alternativeMain .containerForm form .submit:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .alternativeMain .containerForm .following {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .alternativeMain .containerForm .following:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .alternativeMain .containerForm .following2 {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .alternativeMain .containerForm .following2:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .alternativeMain .successTitle {
+  color: #78ff81;
+  margin-bottom: 30px;
+}
+main .alternativeMain .containerId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  gap: 40px;
+  background-color: #f9f9f9;
+  margin: 25px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .alternativeMain .containerId .userId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #474747;
+  padding: 25px;
+}
+main .alternativeMain .finished {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .alternativeMain .finished:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .alternativeMain .topProfil {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+main .alternativeMain .metaInfos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 4%;
+}
+main .alternativeMain .metaInfos .personalInfos,
+main .alternativeMain .metaInfos .availability,
+main .alternativeMain .metaInfos .expression {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 320px;
+  height: 400px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .alternativeMain .metaInfos .personalInfos .titleProfil,
+main .alternativeMain .metaInfos .availability .titleProfil,
+main .alternativeMain .metaInfos .expression .titleProfil {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #474747;
+  border-radius: 2px;
+}
+main .alternativeMain .metaInfos .personalInfos .infosProfil,
+main .alternativeMain .metaInfos .availability .infosProfil,
+main .alternativeMain .metaInfos .expression .infosProfil {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: 320px;
+  width: 100%;
+  gap: 15px;
+}
+main .alternativeMain .metaInfos .personalInfos .infosProfil p,
+main .alternativeMain .metaInfos .availability .infosProfil p,
+main .alternativeMain .metaInfos .expression .infosProfil p {
+  margin-left: 15px;
+}
+main .alternativeMain .metaMissions {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+  margin-top: 60px;
+}
+main .alternativeMain .metaMissions .titleMissions {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .alternativeMain .metaMissions .myMissions {
+  width: 100%;
+  padding: 25px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 60px;
+  background-color: #f9f9f9;
+}
 main .registerFormTitle {
   margin-top: 80px;
   margin-bottom: 20px;
