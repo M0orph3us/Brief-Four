@@ -4,10 +4,14 @@ export function menuAdminboard() {
   const formVolunteersEvents = document.querySelector(
     "#form-volunteers-events"
   );
+  window.onload = () => {
+    eventContainer.style.display = "flex";
+    formNewEvent.style.display = "none";
+    formVolunteersEvents.style.display = "none";
+  };
 
   const btnEvent = document.querySelector("#events");
   btnEvent.addEventListener("click", () => {
-    console.log("event");
     eventContainer.style.display = "flex";
     formNewEvent.style.display = "none";
     formVolunteersEvents.style.display = "none";
@@ -15,7 +19,6 @@ export function menuAdminboard() {
 
   const btnNewEvent = document.querySelector("#new-event");
   btnNewEvent.addEventListener("click", () => {
-    console.log("newEvent");
     formNewEvent.style.display = "flex";
     eventContainer.style.display = "none";
     formVolunteersEvents.style.display = "none";
@@ -23,7 +26,6 @@ export function menuAdminboard() {
 
   const btnAssignVolunteers = document.querySelector("#assign-volunteers");
   btnAssignVolunteers.addEventListener("click", () => {
-    console.log("assignVol");
     formVolunteersEvents.style.display = "flex";
     formNewEvent.style.display = "none";
     eventContainer.style.display = "none";

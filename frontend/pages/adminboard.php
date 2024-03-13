@@ -110,7 +110,7 @@ $screenWidth = $_SESSION["width"];
         </div>
         <div class="form-new-event" id="form-new-event">
             <h1>Add a new event</h1>
-            <form action="../../backend/controller/newEvents.php" method="post">
+            <form action="../../backend/controller/newEvents.php" method="post" onsubmit=" return newEventVerif()">
                 <label for="region-select">region</label>
                 <select name="region" id="region-select" required>
                     <option value="Auvergne-Rhone-Alpes">Auvergne-Rhône-Alpes</option>
@@ -140,6 +140,7 @@ $screenWidth = $_SESSION["width"];
                 <input type="hidden" name="csrf-admin-form" value="<?= $csrfAdminForm ?>">
                 <button type="submit">send</button>
             </form>
+            <script src="../js/scripts/formNewEventVerif.js"></script>
         </div>
         <div class="form-volunteers-events" id="form-volunteers-events">
             <h1>add a volunteer to an event</h1>
@@ -162,7 +163,7 @@ $screenWidth = $_SESSION["width"];
 
                 </select>
                 <input type="hidden" value="<?= $csrfAddVolunteersByEvent ?>">
-                <button type="submit" onsubmit="return newEventVerif()"></button>
+                <button type="submit">send</button>
             </form>
 
         </div>

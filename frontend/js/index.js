@@ -13,13 +13,11 @@ userContainer();
 loginModal();
 
 // function for adminboard
-import { newEventVerif } from "./scripts/formNewEventVerif.js";
 import { menuAdminboard } from "./scripts/adminboard.js";
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
   if (currentPage === `${routeLocal}/adminboard.php`) {
     menuAdminboard();
-    newEventVerif();
   }
 });
 

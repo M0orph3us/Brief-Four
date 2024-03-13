@@ -424,7 +424,7 @@ main .adminboard-container .events-container table tbody tr td {
   padding: 10px;
 }
 main .adminboard-container .form-new-event {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -432,6 +432,14 @@ main .adminboard-container .form-new-event {
   background-color: #f9f9f9;
   box-shadow: 4px 4px 4px 2px lightgray;
   padding: 20px;
+}
+main .adminboard-container .form-new-event .error {
+  background-color: #fa3457;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
 }
 main .adminboard-container .form-new-event form {
   display: flex;

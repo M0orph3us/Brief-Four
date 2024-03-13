@@ -382,7 +382,7 @@ main {
       }
     }
     .form-new-event {
-      display: none;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -390,6 +390,9 @@ main {
       background-color: $content;
       box-shadow: 4px 4px 4px 2px lightgray;
       padding: 20px;
+      .error {
+        @include template-alert($alert);
+      }
       form {
         display: flex;
         flex-direction: column;
