@@ -1,6 +1,6 @@
 "use strict";
 
-const routeLocal = "/Brief-Four/frontend/pages/";
+const routeLocal = "/Brief-Four/frontend/pages";
 
 // functions for menu-burger
 import {
@@ -13,11 +13,13 @@ userContainer();
 loginModal();
 
 // function for adminboard
+import { newEventVerif } from "./scripts/formNewEventVerif.js";
 import { menuAdminboard } from "./scripts/adminboard.js";
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
-  if (currentPage === `${routeLocal}adminboard.php`) {
+  if (currentPage === `${routeLocal}/adminboard.php`) {
     menuAdminboard();
+    newEventVerif();
   }
 });
 
@@ -33,7 +35,7 @@ import {
 } from "./scripts/formChecker.js";
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
-  if (currentPage === "/Brief-Four/frontend/pages/inscription.php") {
+  if (currentPage === `${routeLocal}/inscription.php`) {
     followingButton = document.getElementById("following");
     followingButton.addEventListener("click", formChecker1);
     followingButton2 = document.getElementById("following2");

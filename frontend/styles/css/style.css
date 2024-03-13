@@ -470,6 +470,9 @@ main .adminboard-container .form-new-event form button:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
+main .adminboard-container .form-volunteers-events {
+  display: none;
+}
 main .alternativeMain {
   /***************************REGISTER FORM****************************/
   display: flex;
