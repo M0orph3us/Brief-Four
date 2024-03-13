@@ -67,7 +67,17 @@ body {
   height: 100dvh;
 }
 
-/*/////////////////////////////////// IMPORT /////////////////////////////////////////////*/
+@keyframes alert {
+  0% {
+    padding: 10px;
+  }
+  50% {
+    padding: 12px;
+  }
+  100% {
+    padding: 10px;
+  }
+}
 /*/////////////////////////////// RESPONSIVE MOBIL 320px ///////////////////////////////////////*/
 :root {
   font-size: 16px;
@@ -294,10 +304,33 @@ header .modal-login-form .login-admin-form button:hover {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
+  /***************************REGISTER FORM****************************/
+  /***********************REGISTER SUCCESS*****************************/
+  /********************************PROFIL**********************************/
+}
+main .title-event-home {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
 }
 main .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 30px;
+  row-gap: 40px;
+  padding: 20px 0;
+}
+main .grid-container .card-event-container {
+  width: 90%;
+  margin: auto;
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .grid-container .card-event-container p {
+  width: max-content;
+  text-transform: capitalize;
+  padding: 10px;
 }
 main .error404 {
   background-image: url("../../assets/imgs/404.jpg");
@@ -307,13 +340,15 @@ main .error404 {
   height: 100%;
 }
 main .adminboard-container {
+  width: 100%;
+  max-width: 100%;
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 main .adminboard-container ul {
-  padding-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -338,25 +373,55 @@ main .adminboard-container ul li button:first-child {
   height: 63px;
 }
 main .adminboard-container .events-container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 main .adminboard-container .events-container h1 {
   text-align: center;
 }
+main .adminboard-container .events-container .error {
+  background-color: #fa3457;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+main .adminboard-container .events-container .success {
+  background-color: #78ff81;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+main .adminboard-container .events-container .card-event-container {
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .adminboard-container .events-container .card-event-container p {
+  width: max-content;
+  text-transform: capitalize;
+  padding: 10px;
+}
 main .adminboard-container .events-container table {
+  text-align: center;
   border-collapse: collapse;
   border: 2px solid black;
   background-color: #445aff;
 }
 main .adminboard-container .events-container table thead tr th {
   color: white;
-  padding: 0;
+  padding: 10px;
 }
 main .adminboard-container .events-container table tbody tr td {
   color: white;
-  padding: 0 5px;
+  padding: 10px;
 }
 main .adminboard-container .form-new-event {
   display: none;
@@ -364,6 +429,9 @@ main .adminboard-container .form-new-event {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+  padding: 20px;
 }
 main .adminboard-container .form-new-event form {
   display: flex;
@@ -375,6 +443,16 @@ main .adminboard-container .form-new-event form {
 main .adminboard-container .form-new-event form label {
   text-transform: capitalize;
   font-weight: bold;
+}
+main .adminboard-container .form-new-event form input {
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid lightgray;
+  background-color: #fafafa;
+}
+main .adminboard-container .form-new-event form input:invalid {
+  border: 1px solid #fa3457;
 }
 main .adminboard-container .form-new-event form button {
   text-transform: uppercase;
@@ -389,41 +467,6 @@ main .adminboard-container .form-new-event form button {
   margin-top: 5px;
 }
 main .adminboard-container .form-new-event form button:hover {
-  background-color: #474747;
-  transition: 0.5s background-color;
-}
-main .admin-container .form-admin-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  height: 80%;
-}
-main .admin-container .form-admin-container form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-main .admin-container .form-admin-container form label {
-  font-weight: 600;
-  text-transform: capitalize;
-  color: #252525;
-}
-main .admin-container .form-admin-container form button {
-  text-transform: uppercase;
-  background-color: #445aff;
-  padding: 0.5rem 0.7rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: 0.5s background-color;
-}
-main .admin-container .form-admin-container form button:hover {
   background-color: #474747;
   transition: 0.5s background-color;
 }
@@ -457,7 +500,9 @@ main .alternativeMain .containerFormCompletionIndicator {
   gap: 5px;
   margin-bottom: 20px;
 }
-main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator1, main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator2, main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator3 {
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator1,
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator2,
+main .alternativeMain .containerFormCompletionIndicator .formCompletionIndicator3 {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -482,14 +527,18 @@ main .alternativeMain .containerForm form {
   gap: 25px;
   width: 100%;
 }
-main .alternativeMain .containerForm form .formPart1, main .alternativeMain .containerForm form .formPart2, main .alternativeMain .containerForm form .formPart3 {
+main .alternativeMain .containerForm form .formPart1,
+main .alternativeMain .containerForm form .formPart2,
+main .alternativeMain .containerForm form .formPart3 {
   display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
 }
-main .alternativeMain .containerForm form .formPart1 input, main .alternativeMain .containerForm form .formPart2 input, main .alternativeMain .containerForm form .formPart3 input {
+main .alternativeMain .containerForm form .formPart1 input,
+main .alternativeMain .containerForm form .formPart2 input,
+main .alternativeMain .containerForm form .formPart3 input {
   width: 100%;
   border-radius: 5px;
   border: none;
@@ -497,16 +546,20 @@ main .alternativeMain .containerForm form .formPart1 input, main .alternativeMai
   border: 1px solid lightgray;
   background-color: #fafafa;
 }
-main .alternativeMain .containerForm form .formPart1 input:invalid, main .alternativeMain .containerForm form .formPart2 input:invalid, main .alternativeMain .containerForm form .formPart3 input:invalid {
+main .alternativeMain .containerForm form .formPart1 input:invalid,
+main .alternativeMain .containerForm form .formPart2 input:invalid,
+main .alternativeMain .containerForm form .formPart3 input:invalid {
   border: 1px solid #fa3457;
 }
-main .alternativeMain .containerForm form .formPart1 select, main .alternativeMain .containerForm form .formPart2 select, main .alternativeMain .containerForm form .formPart3 select {
+main .alternativeMain .containerForm form .formPart1 select,
+main .alternativeMain .containerForm form .formPart2 select,
+main .alternativeMain .containerForm form .formPart3 select {
   width: 100%;
   height: 30px;
   border-radius: 1px;
   border: none;
   border: 1px solid lightgray;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 main .alternativeMain .containerForm form .formPart1 {
   display: flex;
@@ -622,7 +675,9 @@ main .alternativeMain .metaInfos {
   margin-bottom: 30px;
   padding: 4%;
 }
-main .alternativeMain .metaInfos .personalInfos, main .alternativeMain .metaInfos .availability, main .alternativeMain .metaInfos .expression {
+main .alternativeMain .metaInfos .personalInfos,
+main .alternativeMain .metaInfos .availability,
+main .alternativeMain .metaInfos .expression {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -632,7 +687,9 @@ main .alternativeMain .metaInfos .personalInfos, main .alternativeMain .metaInfo
   background-color: #f9f9f9;
   box-shadow: 4px 4px 4px 2px lightgray;
 }
-main .alternativeMain .metaInfos .personalInfos .titleProfil, main .alternativeMain .metaInfos .availability .titleProfil, main .alternativeMain .metaInfos .expression .titleProfil {
+main .alternativeMain .metaInfos .personalInfos .titleProfil,
+main .alternativeMain .metaInfos .availability .titleProfil,
+main .alternativeMain .metaInfos .expression .titleProfil {
   width: 100%;
   height: 80px;
   display: flex;
@@ -641,7 +698,9 @@ main .alternativeMain .metaInfos .personalInfos .titleProfil, main .alternativeM
   border: 1px solid #474747;
   border-radius: 2px;
 }
-main .alternativeMain .metaInfos .personalInfos .infosProfil, main .alternativeMain .metaInfos .availability .infosProfil, main .alternativeMain .metaInfos .expression .infosProfil {
+main .alternativeMain .metaInfos .personalInfos .infosProfil,
+main .alternativeMain .metaInfos .availability .infosProfil,
+main .alternativeMain .metaInfos .expression .infosProfil {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -650,7 +709,9 @@ main .alternativeMain .metaInfos .personalInfos .infosProfil, main .alternativeM
   width: 100%;
   gap: 15px;
 }
-main .alternativeMain .metaInfos .personalInfos .infosProfil p, main .alternativeMain .metaInfos .availability .infosProfil p, main .alternativeMain .metaInfos .expression .infosProfil p {
+main .alternativeMain .metaInfos .personalInfos .infosProfil p,
+main .alternativeMain .metaInfos .availability .infosProfil p,
+main .alternativeMain .metaInfos .expression .infosProfil p {
   margin-left: 15px;
 }
 main .alternativeMain .metaMissions {
@@ -685,6 +746,256 @@ main .alternativeMain .metaMissions .myMissions {
   gap: 60px;
   background-color: #f9f9f9;
 }
+main .registerFormTitle {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+main .titleUnderline {
+  width: 12%;
+  height: 1px;
+  background: #474747;
+  margin-bottom: 30px;
+}
+main .containerFormCompletionIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 30px;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+main .containerFormCompletionIndicator .formCompletionIndicator1,
+main .containerFormCompletionIndicator .formCompletionIndicator2,
+main .containerFormCompletionIndicator .formCompletionIndicator3 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #445aff;
+}
+main .containerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 25px;
+  margin: 25px 25px 80px;
+  gap: 10px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .containerForm form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+main .containerForm form .formPart1,
+main .containerForm form .formPart2,
+main .containerForm form .formPart3 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+main .containerForm form .formPart1 input,
+main .containerForm form .formPart2 input,
+main .containerForm form .formPart3 input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  border: 1px solid lightgray;
+  background-color: #fafafa;
+}
+main .containerForm form .formPart1 input:invalid,
+main .containerForm form .formPart2 input:invalid,
+main .containerForm form .formPart3 input:invalid {
+  border: 1px solid #fa3457;
+}
+main .containerForm form .formPart1 select,
+main .containerForm form .formPart2 select,
+main .containerForm form .formPart3 select {
+  width: 100%;
+  height: 30px;
+  border-radius: 1px;
+  border: none;
+  border: 1px solid lightgray;
+  background-color: #f9f9f9;
+}
+main .containerForm form .formPart1 {
+  display: flex;
+}
+main .containerForm form .formPart2 {
+  display: flex;
+}
+main .containerForm form .formPart3 {
+  display: flex;
+}
+main .containerForm form .submit {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .containerForm form .submit:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .containerForm .following {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .containerForm .following:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .successTitle {
+  color: #78ff81;
+  margin-bottom: 30px;
+}
+main .containerId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  gap: 40px;
+  background-color: #f9f9f9;
+  margin: 25px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .containerId .userId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #474747;
+  padding: 25px;
+}
+main .finished {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  border: none;
+}
+main .finished:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .topProfil {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+main .metaInfos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 4%;
+}
+main .metaInfos .personalInfos,
+main .metaInfos .availability,
+main .metaInfos .expression {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 320px;
+  height: 400px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .metaInfos .personalInfos .titleProfil,
+main .metaInfos .availability .titleProfil,
+main .metaInfos .expression .titleProfil {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #474747;
+  border-radius: 2px;
+}
+main .metaInfos .personalInfos .infosProfil,
+main .metaInfos .availability .infosProfil,
+main .metaInfos .expression .infosProfil {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: 320px;
+  width: 100%;
+  gap: 15px;
+}
+main .metaInfos .personalInfos .infosProfil p,
+main .metaInfos .availability .infosProfil p,
+main .metaInfos .expression .infosProfil p {
+  margin-left: 15px;
+}
+main .metaMissions {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+  margin-top: 60px;
+}
+main .metaMissions .titleMissions {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .metaMissions .myMissions {
+  width: 100%;
+  padding: 25px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 60px;
+  background-color: #f9f9f9;
+}
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 /*/////////////////////////////// RESPONSIVE TABLET 768px //////////////////////////////////////*/
@@ -707,7 +1018,7 @@ main .alternativeMain .metaMissions .myMissions {
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   main .grid-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }
@@ -736,9 +1047,9 @@ main .alternativeMain .metaMissions .myMissions {
     gap: 2rem;
   }
   header .navbar-container-desktop .links-container li a {
-    color: #252525;
+    color: black;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
   }
   header .navbar-container-desktop .connections-container {
     display: flex;
@@ -766,7 +1077,7 @@ main .alternativeMain .metaMissions .myMissions {
   }
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   main .grid-container {
-    grid-template-columns: repeat(6, 1fr);
+    column-gap: 40px;
   }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }

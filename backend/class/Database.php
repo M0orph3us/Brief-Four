@@ -69,7 +69,20 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('REGION', 'EVENT NAME', 'DATE', 'COMMENT');
+                $entete = array('REGION', 'EVENT NAME', 'DATE', 'NOTE');
+                fputcsv($this->openWriteCsv(), $entete);
+            }
+        }
+        fputcsv($this->openWriteCsv(), $array);
+        fclose($this->openWriteCsv());
+    }
+
+    // function to write a new volunteers by event
+    public function writeVolunteersByevent(array $array)
+    {
+        if ($this->openWriteCsv() !== false) {
+            if (filesize($this->urlCsv) == 0) {
+                $entete = array('EVENT', 'VOLUNTEER');
                 fputcsv($this->openWriteCsv(), $entete);
             }
         }
@@ -82,7 +95,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'PHONE', 'MAIL', 'REGION', 'AVAILABILITY DAY', 'AVAILABILITY HOUR', 'PRIVILIGED POST', 'FREE EXPRESSION');
+                $entete = array('FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'PHONE', 'MAIL', 'REGION', 'AVAILABILITY DAY', 'AVAILABILITY HOUR', 'PRIVILIGED POST', 'FREE EXPRESSION', 'REGISTER DATE');
                 fputcsv($this->openWriteCsv(), $entete);
             }
         }

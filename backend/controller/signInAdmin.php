@@ -13,11 +13,13 @@ if (isset($_POST['csrf-admin']) && $_POST['csrf-admin'] === $_SESSION['csrf-admi
         exit();
     } else {
         $_SESSION['csrf-admin'] = bin2hex(random_bytes(32));
+
         header("Location: ../../frontend/pages/home.php");
         exit();
     }
 } else {
     $_SESSION['csrf-admin'] = bin2hex(random_bytes(32));
+
     header("Location: ../../frontend/pages/404.php");
     exit();
 }

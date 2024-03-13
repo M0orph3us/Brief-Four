@@ -67,8 +67,7 @@ body {
   height: 100dvh;
 }
 
-/*/////////////////////////////////// IMPORT /////////////////////////////////////////////*/
-
+// import
 @import "colors";
 @import "template";
 
@@ -88,9 +87,6 @@ body {
 body {
   z-index: 1;
   font-family: "Poppins";
-  // background-image: url("../../assets/imgs/bcg-img.webp");
-  // background-size: cover;
-  // background-position: center;
 }
 
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
@@ -276,10 +272,34 @@ header {
 main {
   flex: 1;
 
+  // home page
+  .title-event-home {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+  }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 30px;
+    row-gap: 40px;
+    padding: 20px 0;
+
+    .card-event-container {
+      width: 90%;
+      margin: auto;
+      border-radius: 25px;
+      background-color: $content;
+      box-shadow: 4px 4px 4px 2px lightgray;
+      p {
+        width: max-content;
+        text-transform: capitalize;
+        padding: 10px;
+      }
+    }
   }
+
+  // error page
   .error404 {
     background-image: url("../../assets/imgs/404.jpg");
     background-size: cover;
@@ -288,13 +308,16 @@ main {
     height: 100%;
   }
 
+  //  admin page
   .adminboard-container {
+    width: 100%;
+    max-width: 100%;
     display: flex;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     ul {
-      padding-top: 10px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -309,13 +332,34 @@ main {
       }
     }
     .events-container {
+      position: relative;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 10px;
       h1 {
         text-align: center;
       }
+      .error {
+        @include template-alert($alert);
+      }
+
+      .success {
+        @include template-alert($succes);
+      }
+      .card-event-container {
+        border-radius: 25px;
+        background-color: $content;
+        margin-bottom: 20px;
+        box-shadow: 4px 4px 4px 2px lightgray;
+        p {
+          width: max-content;
+          text-transform: capitalize;
+          padding: 10px;
+        }
+      }
       table {
+        text-align: center;
         border-collapse: collapse;
         border: 2px solid black;
         background-color: $primary-color;
@@ -323,7 +367,7 @@ main {
           tr {
             th {
               color: white;
-              padding: 0;
+              padding: 10px;
             }
           }
         }
@@ -331,7 +375,7 @@ main {
           tr {
             td {
               color: white;
-              padding: 0 5px;
+              padding: 10px;
             }
           }
         }
@@ -343,6 +387,9 @@ main {
       align-items: center;
       justify-content: center;
       gap: 10px;
+      background-color: $content;
+      box-shadow: 4px 4px 4px 2px lightgray;
+      padding: 20px;
       form {
         display: flex;
         flex-direction: column;
@@ -353,6 +400,17 @@ main {
           text-transform: capitalize;
           font-weight: bold;
         }
+        input {
+          width: 100%;
+          border-radius: 5px;
+          height: 30px;
+          border: 1px solid lightgray;
+          background-color: $main-bcg;
+        }
+
+        input:invalid {
+          border: 1px solid $alert;
+        }
         button {
           @include template-btn;
           margin-top: 5px;
@@ -361,56 +419,28 @@ main {
     }
   }
 
-  .admin-container {
-    .form-admin-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      height: 80%;
-
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        label {
-          font-weight: 600;
-          text-transform: capitalize;
-          color: $text-color;
-        }
-        button {
-          @include template-btn;
-        }
-      }
-    }
-  }
-
-.alternativeMain {
+  .alternativeMain {
     /***************************REGISTER FORM****************************/
-    .alternativeMain {}
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-  
+
     .registerFormTitle {
       margin-top: 80px;
       margin-bottom: 20px;
       word-break: break-word;
     }
-  
+
     .titleUnderline {
       width: 12%;
       height: 1px;
       background: $footer-bcg;
       margin-bottom: 30px;
     }
-  
+
     .containerFormCompletionIndicator {
       display: flex;
       justify-content: center;
@@ -419,16 +449,17 @@ main {
       height: 30px;
       gap: 5px;
       margin-bottom: 20px;
-  
-      .formCompletionIndicator1, .formCompletionIndicator2, .formCompletionIndicator3 {
+
+      .formCompletionIndicator1,
+      .formCompletionIndicator2,
+      .formCompletionIndicator3 {
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: $primary-color;
       }
     }
-  
-  
+
     .containerForm {
       display: flex;
       justify-content: center;
@@ -439,7 +470,7 @@ main {
       margin: 25px 25px 80px;
       gap: 10px;
       box-shadow: 4px 4px 4px 2px lightgray;
-  
+
       form {
         display: flex;
         justify-content: center;
@@ -447,14 +478,16 @@ main {
         flex-direction: column;
         gap: 25px;
         width: 100%;
-  
-        .formPart1, .formPart2, .formPart3 {
+
+        .formPart1,
+        .formPart2,
+        .formPart3 {
           display: none;
           justify-content: center;
           align-items: center;
           flex-direction: column;
           gap: 10px;
-  
+
           input {
             width: 100%;
             border-radius: 5px;
@@ -463,40 +496,39 @@ main {
             border: 1px solid lightgray;
             background-color: $main-bcg;
           }
-  
+
           input:invalid {
             border: 1px solid $alert;
           }
-  
+
           select {
             width: 100%;
             height: 30px;
             border-radius: 1px;
             border: none;
             border: 1px solid lightgray;
-            background-color: #F9F9F9;
+            background-color: #f9f9f9;
           }
-  
         }
-  
+
         .formPart1 {
           display: flex;
         }
-  
+
         .formPart2 {
           display: flex;
         }
-  
+
         .formPart3 {
           display: flex;
         }
-  
+
         .submit {
           @include template-btn;
           border: none;
         }
       }
-  
+
       .following {
         @include template-btn;
         border: none;
@@ -507,13 +539,13 @@ main {
         border: none;
       }
     }
-  
+
     /***********************REGISTER SUCCESS*****************************/
     .successTitle {
       color: $succes;
       margin-bottom: 30px;
     }
-  
+
     .containerId {
       display: flex;
       justify-content: center;
@@ -524,7 +556,7 @@ main {
       background-color: $content;
       margin: 25px;
       box-shadow: 4px 4px 4px 2px lightgray;
-  
+
       .userId {
         display: flex;
         justify-content: center;
@@ -538,7 +570,7 @@ main {
       @include template-btn;
       border: none;
     }
-  
+
     /********************************PROFIL**********************************/
     .topProfil {
       width: 100%;
@@ -547,7 +579,7 @@ main {
       flex-direction: column;
       align-items: center;
     }
-  
+
     .metaInfos {
       display: flex;
       justify-content: space-evenly;
@@ -558,8 +590,10 @@ main {
       margin-top: 20px;
       margin-bottom: 30px;
       padding: 4%;
-  
-      .personalInfos, .availability, .expression {
+
+      .personalInfos,
+      .availability,
+      .expression {
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -568,7 +602,7 @@ main {
         height: 400px;
         background-color: $content;
         box-shadow: 4px 4px 4px 2px lightgray;
-  
+
         .titleProfil {
           width: 100%;
           height: 80px;
@@ -578,7 +612,7 @@ main {
           border: 1px solid $footer-bcg;
           border-radius: 2px;
         }
-  
+
         .infosProfil {
           display: flex;
           justify-content: center;
@@ -587,14 +621,14 @@ main {
           height: 320px;
           width: 100%;
           gap: 15px;
-        
+
           p {
             margin-left: 15px;
           }
-        } 
+        }
       }
     }
-  
+
     .metaMissions {
       display: flex;
       flex-direction: column;
@@ -605,7 +639,7 @@ main {
       background-color: $content;
       box-shadow: 4px 4px 4px 2px lightgray;
       margin-top: 60px;
-  
+
       .titleMissions {
         width: 100%;
         height: 80px;
@@ -615,7 +649,7 @@ main {
         justify-content: center;
         align-items: center;
       }
-  
+
       .myMissions {
         width: 100%;
         padding: 25px;
@@ -629,11 +663,240 @@ main {
         background-color: $content;
       }
     }
-}  
+  }
+  /***************************REGISTER FORM****************************/
+
+  .registerFormTitle {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    word-break: break-word;
+  }
+
+  .titleUnderline {
+    width: 12%;
+    height: 1px;
+    background: $footer-bcg;
+    margin-bottom: 30px;
+  }
+
+  .containerFormCompletionIndicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 30px;
+    gap: 5px;
+    margin-bottom: 20px;
+
+    .formCompletionIndicator1,
+    .formCompletionIndicator2,
+    .formCompletionIndicator3 {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: $primary-color;
+    }
+  }
+
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $content;
+    padding: 25px;
+    margin: 25px 25px 80px;
+    gap: 10px;
+    box-shadow: 4px 4px 4px 2px lightgray;
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 25px;
+      width: 100%;
+
+      .formPart1,
+      .formPart2,
+      .formPart3 {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+
+        input {
+          width: 100%;
+          border-radius: 5px;
+          border: none;
+          height: 30px;
+          border: 1px solid lightgray;
+          background-color: $main-bcg;
+        }
+
+        input:invalid {
+          border: 1px solid $alert;
+        }
+
+        select {
+          width: 100%;
+          height: 30px;
+          border-radius: 1px;
+          border: none;
+          border: 1px solid lightgray;
+          background-color: #f9f9f9;
+        }
+      }
+
+      .formPart1 {
+        display: flex;
+      }
+
+      .formPart2 {
+        display: flex;
+      }
+
+      .formPart3 {
+        display: flex;
+      }
+
+      .submit {
+        @include template-btn;
+        border: none;
+      }
+    }
+
+    .following {
+      @include template-btn;
+      border: none;
+    }
+  }
+
+  /***********************REGISTER SUCCESS*****************************/
+  .successTitle {
+    color: $succes;
+    margin-bottom: 30px;
+  }
+
+  .containerId {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    gap: 40px;
+    background-color: $content;
+    margin: 25px;
+    box-shadow: 4px 4px 4px 2px lightgray;
+
+    .userId {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border: 1px solid $footer-bcg;
+      padding: 25px;
+    }
+  }
+  .finished {
+    @include template-btn;
+    border: none;
+  }
+
+  /********************************PROFIL**********************************/
+  .topProfil {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metaInfos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 4%;
+
+    .personalInfos,
+    .availability,
+    .expression {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 320px;
+      height: 400px;
+      background-color: $content;
+      box-shadow: 4px 4px 4px 2px lightgray;
+
+      .titleProfil {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $footer-bcg;
+        border-radius: 2px;
+      }
+
+      .infosProfil {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        height: 320px;
+        width: 100%;
+        gap: 15px;
+
+        p {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .metaMissions {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    border-radius: 2px;
+    background-color: $content;
+    box-shadow: 4px 4px 4px 2px lightgray;
+    margin-top: 60px;
+
+    .titleMissions {
+      width: 100%;
+      height: 80px;
+      border: 1px solid black;
+      border-radius: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .myMissions {
+      width: 100%;
+      padding: 25px;
+      height: 500px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 60px;
+      background-color: $content;
+    }
+  }
 }
-
-
-
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 
@@ -648,4 +911,3 @@ main {
 @media (min-width: 1024px) {
   @import "desktop";
 }
-

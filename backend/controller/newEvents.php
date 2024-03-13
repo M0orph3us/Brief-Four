@@ -9,7 +9,7 @@ if (isset($_POST['csrf-admin-form']) && $_POST['csrf-admin-form'] === $_SESSION[
         $regionSanitize = htmlentities($region);
 
         $date = new DateTimeImmutable($_POST["date"]);
-        $dateFormated = $date->format("d/m/Y");
+        $dateFormated = $date->format("d/m/y");
 
         $nameEvent = $_POST["name-event"];
         $nameEventSanitize = htmlentities($nameEvent);
@@ -32,8 +32,4 @@ if (isset($_POST['csrf-admin-form']) && $_POST['csrf-admin-form'] === $_SESSION[
         header("Location: ../../frontend/pages/adminboard.php");
         exit();
     }
-} else {
-    $_SESSION['csrf-admin-form'] = bin2hex(random_bytes(32));
-    header("Location: ../../frontend/pages/404.php");
-    exit();
 }
