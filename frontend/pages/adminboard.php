@@ -10,9 +10,9 @@ if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== t
 }
 require './includes/header.php';
 
-$urlCsvAddVolunteersByEvent = '../../backend/database/volunteersByEvent.csv';
-$volunteersByEvent = new Database($urlCsvAddVolunteersByEvent);
-$setvolunteersByEvent = $volunteersByEvent->readCsv();
+// $urlCsvAddVolunteersByEvent = '../../backend/database/volunteersByEvent.csv';
+// $volunteersByEvent = new Database($urlCsvAddVolunteersByEvent);
+// $getVolunteersByEvent = $volunteersByEvent->readCsv();
 
 $urlCsvEvent = "../../backend/database/events.csv";
 $events = new Database($urlCsvEvent);
@@ -110,8 +110,7 @@ $screenWidth = $_SESSION["width"];
         </div>
         <div class="form-new-event" id="form-new-event">
             <h1>Add a new event</h1>
-
-            <form action="../../backend/controller/newEvents.php" method="post">
+            <form action="../../backend/controller/newEvents.php" method="post" onsubmit=" return newEventVerif()">
                 <label for="region-select">region</label>
                 <select name="region" id="region-select" required>
                     <option value="Auvergne-Rhone-Alpes">Auvergne-Rhône-Alpes</option>
@@ -136,30 +135,35 @@ $screenWidth = $_SESSION["width"];
                 <input type="text" name="name-event" id="name-event" minlength="3" maxlength="50" required>
 
                 <label for="comment-event">comment</label>
-                <input type="text" name="comment-event" id="comment-event">
+                <input type="text" name="comment-event" id="comment-event" minlength="5" maxlength="100">
 
                 <input type="hidden" name="csrf-admin-form" value="<?= $csrfAdminForm ?>">
                 <button type="submit">send</button>
             </form>
+            <script src="../js/scripts/formNewEventVerif.js"></script>
         </div>
         <div class="form-volunteers-events" id="form-volunteers-events">
+            <h1>add a volunteer to an event</h1>
             <form action="../../backend/controller/addVolunteersByEvent.php" method="post">
-                <label for="volunteers-select"></label>
+                <label for="volunteers-select">Select Volunteers</label>
                 <select name="volunteers" id="volunteers-select">
                     <?php
-
+                    // for ($k = 1; $k < count($getVolunteers); $k++) {
+                    // }
                     ?>
-
                 </select>
-                <label for="event-select"></label>
+                <label for="event-select">Select Event</label>
                 <select name="event" id="event-select">
                     <?php
-
+                    for ($k = 1; $k < count($getEvents); $k++) {
+                        $eventName = $getEvents[$k][1];
+                        echo "<option value= $eventName>$eventName</option>";
+                    }
                     ?>
 
                 </select>
                 <input type="hidden" value="<?= $csrfAddVolunteersByEvent ?>">
-                <button type="submit"></button>
+                <button type="submit">send</button>
             </form>
 
         </div>
