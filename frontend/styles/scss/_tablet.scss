@@ -29,6 +29,9 @@ header {
 main {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
+    .card-event-container {
+      width: 350px;
+    }
   }
 }
 

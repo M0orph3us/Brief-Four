@@ -10,13 +10,17 @@ if (!isset($_SESSION["isConnectedAdmin"]) || $_SESSION["isConnectedAdmin"] !== t
 }
 require './includes/header.php';
 
-// $urlCsvAddVolunteersByEvent = '../../backend/database/volunteersByEvent.csv';
-// $volunteersByEvent = new Database($urlCsvAddVolunteersByEvent);
-// $getVolunteersByEvent = $volunteersByEvent->readCsv();
+$urlCsvAddVolunteersByEvent = '../../backend/database/volunteersByEvent.csv';
+$volunteersByEvent = new Database($urlCsvAddVolunteersByEvent);
+$getVolunteersByEvent = $volunteersByEvent->readCsv();
 
 $urlCsvEvent = "../../backend/database/events.csv";
 $events = new Database($urlCsvEvent);
 $getEvents = $events->readCsv();
+
+$urlCsvUsers = '../../backend/database/users.csv';
+$users = new Database($urlCsvUsers);
+$getUsers = $users->readCsv();
 
 $screenWidth = $_SESSION["width"];
 ?>
@@ -42,72 +46,102 @@ $screenWidth = $_SESSION["width"];
                 echo '<table border="2" id="table-desktop">';
                 echo '<thead>';
                 echo '<tr>';
-
-                foreach ($getEvents[0] as  $value) {
-                    echo "<th> $value </th>";
-                };
-
+                echo "<th>REGION</th>";
+                echo "<th>EVENT NAME</th>";
+                echo "<th>DAY REMAINING</th>";
+                echo "<th>NOTE</th>";
                 echo '</tr>';
                 echo '</thead>';
             }
-            $events = [];
-            for ($k = 1; $k < count($getEvents); $k++) {
-                $region = $getEvents[$k][0];
-                $eventName = $getEvents[$k][1];
-                $getDate = $getEvents[$k][2];
-                $date = DateTimeImmutable::createFromFormat('d/m/y', $getDate);
-                $currentDate = new DateTimeImmutable();
-                $diff = $currentDate->diff($date);
+            if (!empty($getEvents[1])) {
+                $events = [];
+                for ($k = 1; $k < count($getEvents); $k++) {
+                    $region = $getEvents[$k][0];
+                    $eventName = $getEvents[$k][1];
+                    $getDate = $getEvents[$k][2];
+                    $date = DateTimeImmutable::createFromFormat('d/m/y', $getDate);
+                    $currentDate = new DateTimeImmutable();
+                    $diff = $currentDate->diff($date);
 
-                $dayLeft = $diff->format('%a');
-                if (!empty($getEvents[$k][3])) {
-                    $comment = $getEvents[$k][3];
-                } else {
-                    $comment = '';
+                    $dayLeft = $diff->format('%a');
+                    if (!empty($getEvents[$k][3])) {
+                        $comment = $getEvents[$k][3];
+                    } else {
+                        $comment = '';
+                    }
+
+                    $events[] = [
+                        'region' => $region,
+                        'eventName' => $eventName,
+                        'dayLeft' => $dayLeft,
+                        'comment' => $comment,
+                    ];
                 }
 
-                $events[] = [
-                    'region' => $region,
-                    'eventName' => $eventName,
-                    'dayLeft' => $dayLeft,
-                    'comment' => $comment,
-                ];
-            }
+                usort($events, function ($a, $b) {
+                    return $a['dayLeft'] - $b['dayLeft'];
+                });
+                foreach ($events as $event) {
+                    if ($screenWidth > 768) {
 
-            usort($events, function ($a, $b) {
-                return $a['dayLeft'] - $b['dayLeft'];
-            });
-            foreach ($events as $event) {
-                if ($screenWidth > 768) {
-
-                    echo "<tbody>";
-                    echo "<tr>";
-                    echo "<td>" . $event['region'] . "</td>";
-                    echo "<td>" . $event['eventName'] . "</td>";
-                    if ($event['dayLeft'] < 5) {
-                        echo "<td class=error >" . $event['dayLeft'] . " day(s)</td>";
-                    } else {
-                        echo "<td>" . $event['dayLeft'] . " day(s)</td>";
+                        echo "<tbody>";
+                        echo "<tr>";
+                        echo "<td>" . $event['region'] . "</td>";
+                        echo "<td>" . $event['eventName'] . "</td>";
+                        if ($event['dayLeft'] < 5) {
+                            echo "<td class=error >" . $event['dayLeft'] . " day(s)</td>";
+                        } else {
+                            echo "<td>" . $event['dayLeft'] . " day(s)</td>";
+                        }
+                        echo "<td>" . $event['comment'] . "</td>";
+                        echo "</tr>";
+                        echo "</tbody>";
+                    } else if ($screenWidth < 768) {
+                        echo "<div class=\" card-event-container\">";
+                        echo "<p>region :" . $event['region'] . "</p>";
+                        echo "<p>event name :" . $event['eventName'] . "</p>";
+                        if ($event['dayLeft'] < 5) {
+                            echo "<p class=error>date :" . $event['dayLeft'] . "</p>";
+                        } else {
+                            echo "<p>date :" . $event['dayLeft'] . "</p>";
+                        }
+                        echo "<p>note :" . $event['comment'] . "</p>";
+                        echo "</div>";
                     }
-                    echo "<td>" . $event['comment'] . "</td>";
-                    echo "</tr>";
-                    echo "</tbody>";
-                } else if ($screenWidth < 768) {
-                    echo "<div class=\" card-event-container\">";
-                    echo "<p>region :" . $event['region'] . "</p>";
-                    echo "<p>event name :" . $event['eventName'] . "</p>";
-                    if ($event['dayLeft'] < 5) {
-                        echo "<p class=error>date :" . $event['dayLeft'] . "</p>";
-                    } else {
-                        echo "<p>date :" . $event['dayLeft'] . "</p>";
-                    }
-                    echo "<p>note :" . $event['comment'] . "</p>";
-                    echo "</div>";
                 }
             }
+
             ?>
             </table>
+            <div class="volunteers-events-container">
+                <table border="2" id="table-desktop">
+                    <thead>
+                        <tr>
+                            <th>EVENT NAME</th>
+                            <th>VOLUNTEERS</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    if (!empty($getVolunteersByEvent[1])) {
+                        for ($k = 1; $k < count($getVolunteersByEvent); $k++) {
+                            $eventName = $getVolunteersByEvent[$k][0];
+                            $volunteers = $getVolunteersByEvent[$k][1];
+                            $date = $getVolunteersByEvent[$k][2];
+                            echo "<tbody>";
+                            echo "<tr>";
+                            echo "<td>$eventName</td>";
+                            echo "<td>$volunteers</td>";
+                            echo "<td>$date</td>";
+                            echo '</tr>';
+                            echo "</tbody>";
+                        }
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
+
         <div class="form-new-event" id="form-new-event">
             <h1>Add a new event</h1>
             <form action="../../backend/controller/newEvents.php" method="post" onsubmit=" return newEventVerif()">
@@ -143,13 +177,16 @@ $screenWidth = $_SESSION["width"];
             <script src="../js/scripts/formNewEventVerif.js"></script>
         </div>
         <div class="form-volunteers-events" id="form-volunteers-events">
-            <h1>add a volunteer to an event</h1>
+            <h1>Add a volunteer to an event</h1>
             <form action="../../backend/controller/addVolunteersByEvent.php" method="post">
                 <label for="volunteers-select">Select Volunteers</label>
                 <select name="volunteers" id="volunteers-select">
                     <?php
-                    // for ($k = 1; $k < count($getVolunteers); $k++) {
-                    // }
+                    for ($k = 1; $k < count($getUsers); $k++) {
+                        $lastName = $getUsers[$k][1];
+                        $firstName = $getUsers[$k][0];
+                        echo "<option value=$firstName-$lastName >$firstName  $lastName </option>";
+                    }
                     ?>
                 </select>
                 <label for="event-select">Select Event</label>
@@ -162,10 +199,9 @@ $screenWidth = $_SESSION["width"];
                     ?>
 
                 </select>
-                <input type="hidden" value="<?= $csrfAddVolunteersByEvent ?>">
+                <input type="hidden" name="csrf-add-volunteers-by-event-form" value="<?= $csrfAddVolunteersByEvent ?>">
                 <button type="submit">send</button>
             </form>
-
         </div>
     </div>
 </main>
