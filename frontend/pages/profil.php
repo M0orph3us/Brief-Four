@@ -29,12 +29,12 @@ $userCode = '0f3960c4';
             <?php foreach($getUserProfil as $user) {
             if($userCode == $user[12]) {
                 echo "<p>Prénom : $user[0] </p>";
-                echo "<p>Nom :</p>";
-                echo "<p>Age :</p>";
-                echo "<p>Sexe :</p>";
-                echo "<p>Tél :</p>";
-                echo "<p>Email :</p>";
-                echo "<p>Date d'inscription :</p>";
+                echo "<p>Nom :$user[1]</p>";
+                echo "<p>Age : $user[2]</p>";
+                echo "<p>Sexe : $user[3]</p>";
+                echo "<p>Tél : $user[4]</p>";
+                echo "<p>Email : $user[5]</p>";
+                echo "<p>Date d'inscription : $user[6]</p>";
                 };
             }; ?>
             </div>

@@ -1,19 +1,10 @@
-
-
-
 TO DO Lucas :
-Validations des entrées du formulaire (JS) et affichage dynamique du form
-Gérer requête POST
+Erreur infos page profil
+Pas de traitement js
+Affichage du form et de ses boutons
+inverser if (si le temps)
 
-Gérer la SESSION
 
-récupérér les données et les afficher sur la page profil avec la session, et boucler sur ses infos dans la db
-
-METTRE DATE
-Validation des entrées coté back (PHP)
-Sanitize des entrées (PHP)
-mettre les données dans un tableau
-récupérér les données et les afficher sur la page profil avec la session, et boucler sur ses infos dans la db
 
 
 TODO Gaël :
@@ -23,4 +14,3 @@ TODO Gaël :
 -faire login admin et volunteers
 -faire apparaitre csv eventVolunteers sur admin et profil pages
 -MAQUETTE !!!!
-

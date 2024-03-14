@@ -576,12 +576,13 @@ main .alternativeMain .containerForm form .formPart1 {
   display: flex;
 }
 main .alternativeMain .containerForm form .formPart2 {
-  display: flex;
+  display: none;
 }
 main .alternativeMain .containerForm form .formPart3 {
-  display: flex;
+  display: none;
 }
 main .alternativeMain .containerForm form .submit {
+  display: none;
   text-transform: uppercase;
   background-color: #445aff;
   padding: 0.5rem 0.7rem;

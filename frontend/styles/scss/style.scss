@@ -522,14 +522,15 @@ main {
         }
 
         .formPart2 {
-          display: flex;
+          display: none;
         }
 
         .formPart3 {
-          display: flex;
+          display: none;
         }
 
         .submit {
+          display: none;
           @include template-btn;
           border: none;
         }

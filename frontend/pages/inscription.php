@@ -41,7 +41,7 @@ $csrfRegister = csrfVolunteersForm();
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email" required>
                     <a href="#">
-                        <button class="following" id="following">TEST</button>
+                        <button class="following" id="following">Suivant</button>
                     </a>
                 </div>
 
@@ -90,17 +90,17 @@ $csrfRegister = csrfVolunteersForm();
                         <option value="animation">Animation</option>
                     </select>
                     <a href="#">
-                        <button class="following2" id="following2">TEST</button>
+                        <button class="following2" id="following2">Suivant</button>
                     </a>
                 </div>
 
                 <div class="formPart3">
                     <h2>Expression libre</h2>
                     <label for="freeExpression">Exprimez-vous</label>
-                    <input type="textarea" id="freeExpression" name="freeExpression" required>
+                    <textarea id="freeExpression" name="freeExpression" rows="5" cols="22" required></textarea>
                 </div>
                 <input type="hidden" name="csrf-volunteers-form" value=<?= $csrfRegister ?>>
-                <input type="submit" class="submit" value="Soumettre" onsubmit="return formChecker3()">
+                <input type="submit" class="submit" value="Soumettre" id="submit">
             </form>
         </div>
     </div>
