@@ -34,7 +34,7 @@ $userCode = '0f3960c4';
                 echo "<p>Sexe : $user[3]</p>";
                 echo "<p>Tél : $user[4]</p>";
                 echo "<p>Email : $user[5]</p>";
-                echo "<p>Date d'inscription : $user[6]</p>";
+                echo "<p>Date d'inscription : $user[11]</p>";
                 };
             }; ?>
             </div>
@@ -45,11 +45,15 @@ $userCode = '0f3960c4';
                 <h2>Disponibilités</h2>
             </div>
             <div class="infosProfil">
-                <p>Région :</p>
-                <p>Jours :</p>
-                <p>Heures :</p>
-                <p>Poste fav :</p>
-            </div>
+            <?php foreach($getUserProfil as $user) {
+            if($userCode == $user[12]) {
+                echo "<p>Région : $user[6]</p>";
+                echo "<p>Jours : $user[7]</p>";
+                echo "<p>Heures : $user[8]</p>";
+                echo "<p>Poste fav : $user[9]</p>";
+            }
+        }?>
+        </div>
         </section>
 
         <section class="expression">
@@ -57,7 +61,11 @@ $userCode = '0f3960c4';
                 <h2>Expression</h2>
             </div>
             <div class="infosProfil">
-                <p>Votre message :</p>
+            <?php foreach($getUserProfil as $user) {
+            if($userCode == $user[12]) {
+                echo "<p>$user[10]<p>";
+                }
+            }?>
             </div>
         </section>
 

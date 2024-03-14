@@ -1,9 +1,6 @@
 TO DO Lucas :
-Erreur infos page profil
-Pas de traitement js
-Affichage du form et de ses boutons
-inverser if (si le temps)
-
+Infos du profil qui n'apparaissent pas
+Boutons d'état d'avancement du form
 
 
 

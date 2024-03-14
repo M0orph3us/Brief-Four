@@ -1,4 +1,2 @@
-FIRSTNAME,LASTNAME,AGE,SEX,PHONE,MAIL,REGION,"AVAILABILITY DAY","AVAILABILITY HOUR","PRIVILIGED POST","FREE EXPRESSION","REGISTER DATE","CODE"
-iufgizagufg,azdkuazud,20,homme,0000000000,a@aaaa,Bretagne,weekEnd,apresMidi,technique,ouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouioui,13/03/24,0f3960c4
-ouioioiuio,khuhiuhiuh,20,homme,0000000000,a@aaaa,Corse,semaine,apresMidi,bar,ouiouiooiuououoiouiouiooiuououoiouiouiooiuououoiouiouiooiuououoiouiouiooiuououoiouiouiooiuououoiouiouiooiuououoi,14/03/24,41c9677a
-igiug,feaefaez,20,homme,0000000000,a@aaaaa,Bourgogne-Franche-Comte,semaine,apresMidi,bar,ouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouioui,14/03/24,719f983a
+FIRSTNAME,LASTNAME,AGE,SEX,PHONE,MAIL,REGION,"AVAILABILITY DAY","AVAILABILITY HOUR","PRIVILIGED POST","FREE EXPRESSION","REGISTER DATE",CODE
+lucas,lucas,20,homme,0000000000,a@aaaaa,Bretagne,semaine,matin,bar,ouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouioui,14/03/24,c01159be
