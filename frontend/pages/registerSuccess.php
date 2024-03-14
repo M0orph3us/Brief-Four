@@ -11,7 +11,7 @@ $csrfRegister = csrfVolunteersForm();
         <div class="containerId">
             <h2>Votre identifiant de connexion</h2>
             <p>Gardez le précieusement !</p>
-            <div class="userId">1233211</div>
+            <div class="userId"><?= $_GET["usercode"] ?></div>
         </div>
         <a href="./home.php">
             <button class="finished">Terminer</button>
