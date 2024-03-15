@@ -1,2 +1,3 @@
-FIRSTNAME,LASTNAME,AGE,SEX,PHONE,MAIL,REGION,"AVAILABILITY DAY","AVAILABILITY HOUR","PRIVILIGED POST","FREE EXPRESSION","REGISTER DATE"
+FIRSTNAME,LASTNAME,AGE,SEX,PHONE,MAIL,REGION,"AVAILABILITY DAY","AVAILABILITY HOUR","PRIVILIGED POST","FREE EXPRESSION","REGISTER DATE",CODE
+lucas,lucas,20,homme,0000000000,a@aaaaa,Bretagne,semaine,matin,bar,ouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouiouioui,14/03/24,c01159be
 Gael,MOREAU,20,femme,0676697878,moreau.gael.pro@gmail.com,"Centre-Val de Loire",semaine,matin,securite,rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr,14/03/24,46bbe48f
