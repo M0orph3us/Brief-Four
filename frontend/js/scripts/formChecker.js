@@ -1,9 +1,3 @@
-let followingButton = document.getElementById('following');
-let followingButton2 = document.getElementById('following2');
-
-followingButton.addEventListener('click', ()=>formChecker1());
-followingButton2.addEventListener('click', ()=>formChecker2());
-
 export function formChecker1() {
   let firstNameInput = document.getElementById("firstName");
   let lastNameInput = document.getElementById("lastName");
@@ -53,16 +47,14 @@ export function formChecker1() {
   }
 
   let formPart1 = document.querySelector(".formPart1");
-  formPart1.style.display = 'none';
-
+  formPart1.style.display = "none";
 
   let formPart2 = document.querySelector(".formPart2");
-  formPart2.style.display = 'flex';
+  formPart2.style.display = "flex";
 }
 
 export function formChecker2() {
-
-  document.getElementById('following')
+  document.getElementById("following");
 
   let regionSelect = document.getElementById("region");
   let dateSelect = document.getElementById("dateAvailability");
@@ -116,14 +108,13 @@ export function formChecker2() {
     return;
   }
   let formPart2 = document.querySelector(".formPart2");
-  formPart2.style.display = 'none';
-
+  formPart2.style.display = "none";
 
   let formPart3 = document.querySelector(".formPart3");
-  formPart3.style.display = 'flex';
+  formPart3.style.display = "flex";
 
-  let submitButton = document.getElementById('submit');
-  submitButton.style.display = 'flex';
+  let submitButton = document.getElementById("submit");
+  submitButton.style.display = "flex";
 }
 
 export function formChecker3() {
@@ -131,6 +122,5 @@ export function formChecker3() {
   if (expressionInput.value.length < 30 || expressionInput.value.length > 500) {
     alert("Votre billet d'humeur est trop court, ou trop long !");
     return;
-  }  
-  
+  }
 }

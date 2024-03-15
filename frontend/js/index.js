@@ -34,10 +34,11 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
   if (currentPage === `${routeLocal}/inscription.php`) {
-    const followingButton = document.getElementById("following");
-    followingButton.addEventListener("click", formChecker1);
-    const followingButton2 = document.getElementById("following2");
-    followingButton2.addEventListener("click", formChecker2);
+    let followingButton = document.getElementById("following");
+    let followingButton2 = document.getElementById("following2");
+
+    followingButton.addEventListener("click", () => formChecker1());
+    followingButton2.addEventListener("click", () => formChecker2());
   }
 });
 
