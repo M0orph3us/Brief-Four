@@ -4,6 +4,7 @@ function newEventVerif() {
   const formNewEventTarget = document.querySelector("#form-new-event");
   const alert = document.createElement("p");
   alert.classList.add("error");
+
   if (nameEventValue.length < 3) {
     alert.textContent = "The event name must be at least 3 characters";
     formNewEventTarget.append(alert);
@@ -18,7 +19,6 @@ function newEventVerif() {
     return false;
   } else if (commentEventValue !== "" && commentEventValue.length > 100) {
     alert.textContent = "The event name must be less than 50 characters";
-    formNewEventTarget.prepend(alert);
     formNewEventTarget.apend(alert);
     return false;
   } else {

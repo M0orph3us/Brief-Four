@@ -55,6 +55,19 @@ header {
 main {
   .grid-container {
     column-gap: 40px;
+    .card-event-container {
+      width: 390px;
+    }
+  }
+  .alternativeMain {
+    .events-user-container {
+      .events-user-mobile {
+        display: none;
+      }
+      .events-user-desktop {
+        display: block;
+      }
+    }
   }
 }
 

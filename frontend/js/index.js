@@ -34,9 +34,18 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
   if (currentPage === `${routeLocal}/inscription.php`) {
-    followingButton = document.getElementById("following");
+    const followingButton = document.getElementById("following");
     followingButton.addEventListener("click", formChecker1);
-    followingButton2 = document.getElementById("following2");
+    const followingButton2 = document.getElementById("following2");
     followingButton2.addEventListener("click", formChecker2);
+  }
+});
+
+// functions for profil page
+import { btnProfilPage } from "./scripts/profil.js";
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname;
+  if (currentPage === `${routeLocal}/profil.php`) {
+    btnProfilPage();
   }
 });

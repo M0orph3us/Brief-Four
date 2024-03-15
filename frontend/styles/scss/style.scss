@@ -286,7 +286,7 @@ main {
     padding: 20px 0;
 
     .card-event-container {
-      width: 90%;
+      width: 315px;
       margin: auto;
       border-radius: 25px;
       background-color: $content;
@@ -421,7 +421,43 @@ main {
       }
     }
     .form-volunteers-events {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: $content;
+      box-shadow: 4px 4px 4px 2px lightgray;
+      padding: 20px;
+      .error {
+        @include template-alert($alert);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        label {
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+        input {
+          width: 100%;
+          border-radius: 5px;
+          height: 30px;
+          border: 1px solid lightgray;
+          background-color: $main-bcg;
+        }
+
+        input:invalid {
+          border: 1px solid $alert;
+        }
+        button {
+          @include template-btn;
+          margin-top: 5px;
+        }
+      }
     }
   }
 
@@ -670,6 +706,37 @@ main {
         background-color: $content;
       }
     }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      column-gap: 20px;
+      button {
+        @include template-btn;
+        margin-top: 20px;
+      }
+    }
+
+    .events-user-container {
+      .events-user-mobile {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        .card-event-user {
+          border-radius: 25px;
+          background-color: $content;
+          margin-bottom: 20px;
+          box-shadow: 4px 4px 4px 2px lightgray;
+          p {
+            width: max-content;
+            text-transform: capitalize;
+            padding: 10px;
+          }
+        }
+      }
+      .events-user-desktop {
+        display: none;
+      }
+    }
   }
   /***************************REGISTER FORM****************************/
 
@@ -906,6 +973,9 @@ main {
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
+footer {
+  background-color: $footer-bcg;
+}
 
 /*/////////////////////////////// RESPONSIVE TABLET 768px //////////////////////////////////////*/
 

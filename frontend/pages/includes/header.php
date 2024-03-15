@@ -52,7 +52,7 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                         echo '<li><a href="./adminboard.php">admin</a></li>';
                     }
                     if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true) {
-                        echo '<li><a href="./profil.php">admin</a></li>';
+                        echo '<li><a href="./profil.php">profil</a></li>';
                     }
                     ?>
                 </ul>
@@ -69,15 +69,11 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                     echo '<li><a href="./adminboard.php">admin</a></li>';
                 }
                 if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true) {
-                    echo '<li><a href="./profil.php">admin</a></li>';
+                    echo '<li><a href="./profil.php">profil</a></li>';
                 }
                 ?>
             </ul>
             <div class="connections-container" id="connection-container">
-                <!-- <button type="button" class="btn-login" id="btn-login-desktop">login</button>
-                <a href="./inscription.php"><button type="button" class="btn-register-desktop"
-                        id="btn-register-desktop">register</button>
-                </a> -->
                 <?php
                 if (isset($_SESSION["isConnectedVolunteer"]) && !empty($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true || isset($_SESSION["isConnectedAdmin"]) && !empty($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === true) {
                     echo '<a href=' . $backend . 'controller/logout.php><button type="button">logout</button></a>';
@@ -96,8 +92,7 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <button id="btn-volunteer" type="button">volunteer</button>
                 <button id="btn-admin" type="button">admin</button>
             </div>
-            <form class="login-admin-form" id="login-admin-form" action="../../Backend/controller/signInAdmin.php"
-                method="POST">
+            <form class="login-admin-form" id="login-admin-form" action="../../Backend/controller/signInAdmin.php" method="POST">
                 <label for="username-login">username</label>
                 <input id="username-login" type="text" name="username" autocomplete="on" required>
 
@@ -111,8 +106,7 @@ $title = ucfirst(str_replace($pattern, "", $uri));
                 <button id="btn-login-admin" stype="submit">login</button>
             </form>
 
-            <form class="login-user-form" id="login-user-form" action="../../Backend/controller/signInVolunteer.php"
-                method="post">
+            <form class="login-user-form" id="login-user-form" action="../../Backend/controller/signInVolunteer.php" method="post">
                 <label for="password-user">code</label>
                 <div class="code-login-container">
                     <input type="password" id="password-user" name="code">

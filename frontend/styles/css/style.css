@@ -321,7 +321,7 @@ main .grid-container {
   padding: 20px 0;
 }
 main .grid-container .card-event-container {
-  width: 90%;
+  width: 315px;
   margin: auto;
   border-radius: 25px;
   background-color: #f9f9f9;
@@ -479,7 +479,59 @@ main .adminboard-container .form-new-event form button:hover {
   transition: 0.5s background-color;
 }
 main .adminboard-container .form-volunteers-events {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 4px 2px lightgray;
+  padding: 20px;
+}
+main .adminboard-container .form-volunteers-events .error {
+  background-color: #fa3457;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+main .adminboard-container .form-volunteers-events form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+main .adminboard-container .form-volunteers-events form label {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+main .adminboard-container .form-volunteers-events form input {
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid lightgray;
+  background-color: #fafafa;
+}
+main .adminboard-container .form-volunteers-events form input:invalid {
+  border: 1px solid #fa3457;
+}
+main .adminboard-container .form-volunteers-events form button {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  margin-top: 5px;
+}
+main .adminboard-container .form-volunteers-events form button:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
 }
 main .alternativeMain {
   /***************************REGISTER FORM****************************/
@@ -758,6 +810,45 @@ main .alternativeMain .metaMissions .myMissions {
   gap: 60px;
   background-color: #f9f9f9;
 }
+main .alternativeMain .button-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+main .alternativeMain .button-container button {
+  text-transform: uppercase;
+  background-color: #445aff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s background-color;
+  margin-top: 20px;
+}
+main .alternativeMain .button-container button:hover {
+  background-color: #474747;
+  transition: 0.5s background-color;
+}
+main .alternativeMain .events-user-container .events-user-mobile {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+main .alternativeMain .events-user-container .events-user-mobile .card-event-user {
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 4px 2px lightgray;
+}
+main .alternativeMain .events-user-container .events-user-mobile .card-event-user p {
+  width: max-content;
+  text-transform: capitalize;
+  padding: 10px;
+}
+main .alternativeMain .events-user-container .events-user-desktop {
+  display: none;
+}
 main .registerFormTitle {
   margin-top: 80px;
   margin-bottom: 20px;
@@ -1010,6 +1101,10 @@ main .metaMissions .myMissions {
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
+footer {
+  background-color: #474747;
+}
+
 /*/////////////////////////////// RESPONSIVE TABLET 768px //////////////////////////////////////*/
 @media (min-width: 768px) {
   /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
@@ -1031,6 +1126,9 @@ main .metaMissions .myMissions {
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   main .grid-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  main .grid-container .card-event-container {
+    width: 350px;
   }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }
@@ -1090,6 +1188,15 @@ main .metaMissions .myMissions {
   /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
   main .grid-container {
     column-gap: 40px;
+  }
+  main .grid-container .card-event-container {
+    width: 390px;
+  }
+  main .alternativeMain .events-user-container .events-user-mobile {
+    display: none;
+  }
+  main .alternativeMain .events-user-container .events-user-desktop {
+    display: block;
   }
   /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 }

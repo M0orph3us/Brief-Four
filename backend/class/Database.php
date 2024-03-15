@@ -82,7 +82,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('EVENT', 'VOLUNTEER');
+                $entete = array('EVENT NAME', 'VOLUNTEER', 'DATE');
                 fputcsv($this->openWriteCsv(), $entete);
             }
         }
@@ -108,7 +108,7 @@ class Database
     {
         if ($this->openWriteCsv() !== false) {
             if (filesize($this->urlCsv) == 0) {
-                $entete = array('EVENT NAME', 'VOLUNTEERS',  'DATE');
+                $entete = array('EVENT NAME', 'VOLUNTEERS', 'DATE');
                 fputcsv($this->openWriteCsv(), $entete);
             }
         }
