@@ -1,4 +1,4 @@
-# Create a responsive site
+# Create a site for Volunteers
 
 This project is carried out as part of the Application Developer Designer training at [Simplon Grenoble](https://simplon.co/).
 
