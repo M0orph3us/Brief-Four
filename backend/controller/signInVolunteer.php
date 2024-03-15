@@ -19,15 +19,18 @@ if (isset($_POST["csrf-volunteer"]) && $_POST["csrf-volunteer"] === $_SESSION["c
 
                 header("Location: ../../frontend/pages/home.php");
                 exit();
+            } else {
+                $_SESSION["isConnectedVolunteer"] = false;
+                $_SESSION['csrf-volunteer'] = bin2hex(random_bytes(32));
+
+                header("Location: ../../frontend/pages/home.php");
+                exit();
             }
         }
-    } else {
-        $_SESSION['csrf-volunteer'] = bin2hex(random_bytes(32));
-        header("Location: ../../frontend/pages/home.php");
-        exit();
     }
 } else {
     $_SESSION['csrf-volunteer'] = bin2hex(random_bytes(32));
+
     header("Location: ../../frontend/pages/404.php");
     exit();
 }

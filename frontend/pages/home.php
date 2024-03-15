@@ -1,12 +1,30 @@
 <?php
 require '../../backend/config/autoload.php';
 require './includes/header.php';
+require './components/alertLoginAdmin.php';
+require './components/alertLoginVolunteers.php';
+
 $urlCsv = "../../backend/database/events.csv";
 $events = new Database($urlCsv);
 $getEvents = $events->readCsv();
 ?>
 
 <main>
+    <div class="alert-container">
+        <?php
+        if (isset($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === true) {
+            echo "$successAdmin";
+        } else if (isset($_SESSION["isConnectedAdmin"]) && $_SESSION["isConnectedAdmin"] === false) {
+            echo "$errorAdmin";
+        }
+
+        if (isset($_SESSION["isConnectedVolunteer"]) && $_SESSION["isConnectedVolunteer"] === true) {
+            echo "$successVolunteer";
+        } else if (isset($_SESSION["isConnectedVolunteer"]) &&  $_SESSION["isConnectedVolunteer"] === false) {
+            echo "$errorVolunteer";
+        }
+        ?>
+    </div>
     <h1 class="title-event-home">future event : </h1>
     <div class="grid-container">
         <?php

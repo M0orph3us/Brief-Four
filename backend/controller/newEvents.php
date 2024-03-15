@@ -11,6 +11,8 @@ if (isset($_POST['csrf-admin-form']) && !empty($_POST['csrf-admin-form']) && $_P
         $dateFormated = $date->format("d/m/y");
 
         if (strlen($nameEventSanitize) < 3 || strlen($nameEventSanitize) > 50) {
+            $_SESSION['nameEventLength'] = true;
+
             header("Location: ../../frontend/pages/adminboard.php ");
             exit();
         } else {

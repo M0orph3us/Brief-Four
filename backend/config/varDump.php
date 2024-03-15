@@ -3,6 +3,6 @@ function varDump($toTest)
 {
     echo '<pre>';
     var_dump($toTest);
-    die();
+    exit();
     echo '</pre>';
 }

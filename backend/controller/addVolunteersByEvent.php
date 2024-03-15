@@ -34,6 +34,7 @@ if (isset($_POST['csrf-add-volunteers-by-event-form']) && $_POST['csrf-add-volun
         header("Location: ../../frontend/pages/adminboard.php");
         exit();
     } else {
+        $_SESSION["volunteerByEventRegisted"] = false;
         header("Location: ../../frontend/pages/adminboard.php");
         exit();
     }

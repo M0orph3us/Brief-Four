@@ -12,9 +12,10 @@ if (isset($_POST['csrf-admin']) && $_POST['csrf-admin'] === $_SESSION['csrf-admi
             $_SESSION["isConnectedAdmin"] = true;
             $_SESSION['csrf-admin'] = bin2hex(random_bytes(32));
 
-            header("Location: ../../frontend/pages/adminboard.php");
+            header("Location: ../../frontend/pages/home.php");
             exit();
         } else {
+            $_SESSION["isConnectedAdmin"] = false;
             $_SESSION['csrf-admin'] = bin2hex(random_bytes(32));
 
             header("Location: ../../frontend/pages/home.php");

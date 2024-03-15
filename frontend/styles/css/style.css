@@ -94,6 +94,27 @@ body {
   font-family: "Poppins";
 }
 
+/*//////////////////////////////////// ALERT //////////////////////////////////////////////*/
+.error {
+  background-color: #fa3457;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.success {
+  background-color: #78ff81;
+  color: white;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-align: center;
+}
+
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
 header .navbar-container-desktop {
   display: none;
@@ -304,9 +325,6 @@ header .modal-login-form .login-admin-form button:hover {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
-  /***************************REGISTER FORM****************************/
-  /***********************REGISTER SUCCESS*****************************/
-  /********************************PROFIL**********************************/
 }
 main .title-event-home {
   text-transform: uppercase;
@@ -382,22 +400,6 @@ main .adminboard-container .events-container {
 main .adminboard-container .events-container h1 {
   text-align: center;
 }
-main .adminboard-container .events-container .error {
-  background-color: #fa3457;
-  color: white;
-  width: max-content;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0 10px;
-}
-main .adminboard-container .events-container .success {
-  background-color: #78ff81;
-  color: white;
-  width: max-content;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0 10px;
-}
 main .adminboard-container .events-container .card-event-container {
   border-radius: 25px;
   background-color: #f9f9f9;
@@ -440,6 +442,7 @@ main .adminboard-container .form-new-event .error {
   padding: 10px;
   border-radius: 5px;
   margin: 0 10px;
+  text-align: center;
 }
 main .adminboard-container .form-new-event form {
   display: flex;
@@ -495,6 +498,7 @@ main .adminboard-container .form-volunteers-events .error {
   padding: 10px;
   border-radius: 5px;
   margin: 0 10px;
+  text-align: center;
 }
 main .adminboard-container .form-volunteers-events form {
   display: flex;
@@ -770,7 +774,8 @@ main .alternativeMain .metaInfos .expression .infosProfil {
   align-items: start;
   flex-direction: column;
   height: 320px;
-  width: 100%;
+  width: 100;
+  padding: 15px;
   gap: 15px;
 }
 main .alternativeMain .metaInfos .personalInfos .infosProfil p,
@@ -848,256 +853,6 @@ main .alternativeMain .events-user-container .events-user-mobile .card-event-use
 }
 main .alternativeMain .events-user-container .events-user-desktop {
   display: none;
-}
-main .registerFormTitle {
-  margin-top: 80px;
-  margin-bottom: 20px;
-  word-break: break-word;
-}
-main .titleUnderline {
-  width: 12%;
-  height: 1px;
-  background: #474747;
-  margin-bottom: 30px;
-}
-main .containerFormCompletionIndicator {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 105px;
-  height: 30px;
-  gap: 5px;
-  margin-bottom: 20px;
-}
-main .containerFormCompletionIndicator .formCompletionIndicator1,
-main .containerFormCompletionIndicator .formCompletionIndicator2,
-main .containerFormCompletionIndicator .formCompletionIndicator3 {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: #445aff;
-}
-main .containerForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #f9f9f9;
-  padding: 25px;
-  margin: 25px 25px 80px;
-  gap: 10px;
-  box-shadow: 4px 4px 4px 2px lightgray;
-}
-main .containerForm form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 25px;
-  width: 100%;
-}
-main .containerForm form .formPart1,
-main .containerForm form .formPart2,
-main .containerForm form .formPart3 {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-main .containerForm form .formPart1 input,
-main .containerForm form .formPart2 input,
-main .containerForm form .formPart3 input {
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  height: 30px;
-  border: 1px solid lightgray;
-  background-color: #fafafa;
-}
-main .containerForm form .formPart1 input:invalid,
-main .containerForm form .formPart2 input:invalid,
-main .containerForm form .formPart3 input:invalid {
-  border: 1px solid #fa3457;
-}
-main .containerForm form .formPart1 select,
-main .containerForm form .formPart2 select,
-main .containerForm form .formPart3 select {
-  width: 100%;
-  height: 30px;
-  border-radius: 1px;
-  border: none;
-  border: 1px solid lightgray;
-  background-color: #f9f9f9;
-}
-main .containerForm form .formPart1 {
-  display: flex;
-}
-main .containerForm form .formPart2 {
-  display: flex;
-}
-main .containerForm form .formPart3 {
-  display: flex;
-}
-main .containerForm form .submit {
-  text-transform: uppercase;
-  background-color: #445aff;
-  padding: 0.5rem 0.7rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: 0.5s background-color;
-  border: none;
-}
-main .containerForm form .submit:hover {
-  background-color: #474747;
-  transition: 0.5s background-color;
-}
-main .containerForm .following {
-  text-transform: uppercase;
-  background-color: #445aff;
-  padding: 0.5rem 0.7rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: 0.5s background-color;
-  border: none;
-}
-main .containerForm .following:hover {
-  background-color: #474747;
-  transition: 0.5s background-color;
-}
-main .successTitle {
-  color: #78ff81;
-  margin-bottom: 30px;
-}
-main .containerId {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px;
-  gap: 40px;
-  background-color: #f9f9f9;
-  margin: 25px;
-  box-shadow: 4px 4px 4px 2px lightgray;
-}
-main .containerId .userId {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border: 1px solid #474747;
-  padding: 25px;
-}
-main .finished {
-  text-transform: uppercase;
-  background-color: #445aff;
-  padding: 0.5rem 0.7rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: 0.5s background-color;
-  border: none;
-}
-main .finished:hover {
-  background-color: #474747;
-  transition: 0.5s background-color;
-}
-main .topProfil {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
-}
-main .metaInfos {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 50px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding: 4%;
-}
-main .metaInfos .personalInfos,
-main .metaInfos .availability,
-main .metaInfos .expression {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 320px;
-  height: 400px;
-  background-color: #f9f9f9;
-  box-shadow: 4px 4px 4px 2px lightgray;
-}
-main .metaInfos .personalInfos .titleProfil,
-main .metaInfos .availability .titleProfil,
-main .metaInfos .expression .titleProfil {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #474747;
-  border-radius: 2px;
-}
-main .metaInfos .personalInfos .infosProfil,
-main .metaInfos .availability .infosProfil,
-main .metaInfos .expression .infosProfil {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  height: 320px;
-  width: 100%;
-  gap: 15px;
-}
-main .metaInfos .personalInfos .infosProfil p,
-main .metaInfos .availability .infosProfil p,
-main .metaInfos .expression .infosProfil p {
-  margin-left: 15px;
-}
-main .metaMissions {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  width: 100%;
-  border-radius: 2px;
-  background-color: #f9f9f9;
-  box-shadow: 4px 4px 4px 2px lightgray;
-  margin-top: 60px;
-}
-main .metaMissions .titleMissions {
-  width: 100%;
-  height: 80px;
-  border: 1px solid black;
-  border-radius: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .metaMissions .myMissions {
-  width: 100%;
-  padding: 25px;
-  height: 500px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 60px;
-  background-color: #f9f9f9;
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
