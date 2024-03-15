@@ -41,7 +41,7 @@ $csrfRegister = csrfVolunteersForm();
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email" required>
                     <a href="#">
-                        <button class="following" id="following">Suivant</button>
+                        <button type="button" class="following" id="following">Suivant</button>
                     </a>
                 </div>
 
@@ -90,7 +90,7 @@ $csrfRegister = csrfVolunteersForm();
                         <option value="animation">Animation</option>
                     </select>
                     <a href="#">
-                        <button class="following2" id="following2">Suivant</button>
+                        <button type="button" class="following2" id="following2">Suivant</button>
                     </a>
                 </div>
 
