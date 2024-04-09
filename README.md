@@ -53,6 +53,7 @@ To see your style updated when changed, run the npm run watch command. Sass will
 ## Authors
 
 Gaël M : gael.moreau.pro@gmail.com
+
 GitHub profil : https://github.com/M0orph3us
 
 Github profil : https://github.com/LucasHzl
